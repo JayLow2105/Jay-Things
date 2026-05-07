@@ -336,8 +336,14 @@ function generateParlaySuggestions(matches,opts={}){
   ].filter(p=>p&&p.legs.length>=2);
 }
 
+function isUpcomingMatch(m,now=new Date()){
+  const t=new Date(m.commence_time);
+  return m.commence_time&&Number.isFinite(t.getTime())&&t>=now;
+}
+
 function addAnalyzedMatch(list,m,sp){
   m.sport_key=m.sport_key||sp;
+  if(!isUpcomingMatch(m))return;
   const a=analyzeMatchV2(m);
   if(a){
     if(m.source==='pandascore'){

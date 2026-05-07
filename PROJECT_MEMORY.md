@@ -68,6 +68,7 @@ Esports currently active via PandaScore:
 - If direct API calls fail, app loads `odds-cache.json`.
 - GitHub Actions refreshes cache on push and scheduled runs.
 - Public users may see cached data if CORS/network blocks direct API calls.
+- App filters out matches whose start time is before the user's current clock at ingestion, so Dashboard, Parlays, Rankings, and cache fallback only show current/future matches.
 
 ## Prediction Model Status
 
