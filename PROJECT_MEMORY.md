@@ -94,6 +94,7 @@ Esports:
 - Rankings
 - History
 - Settings
+- Settings includes a Dark/White theme selector. `render()` applies `body.theme-light` for white mode.
 
 Parlay cards now show:
 - Sport badge
@@ -136,6 +137,8 @@ Next high-value work:
 ## Coding Notes
 
 - Keep the current dark design style.
+- Maintain both dark and white themes through CSS variables in `styles.css`.
+- Favor larger, readable type sizes; the app base font is intentionally bigger than the original compact layout.
 - Prefer small, beginner-friendly functions.
 - Avoid rebuilding from scratch.
 - Keep `services.js` as the API boundary.

@@ -22,6 +22,7 @@ if(!S.settings.esportsAdded){
   });
   S.settings.esportsAdded=true;
 }
+if(!S.settings.theme)S.settings.theme='dark';
 lsSave('oddsiq_set',S.settings);
 
 function lsGet(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch{return d;}}
@@ -911,6 +912,13 @@ function pgSettings(){
         <option value="fractional" ${ss.oddsFormat==='fractional'?'selected':''}>Fractional</option>
       </select>
     </div>
+    <div class="set-row">
+      <div><div class="set-lbl">Theme</div><div class="set-desc">Choose a higher-contrast dark or white interface</div></div>
+      <select onchange="S.settings.theme=this.value;lsSave('oddsiq_set',S.settings);render()">
+        <option value="dark" ${ss.theme!=='light'?'selected':''}>Dark</option>
+        <option value="light" ${ss.theme==='light'?'selected':''}>White</option>
+      </select>
+    </div>
   </div>
   <div class="set-card">
     <div class="set-ttl"><i class="fa fa-shield-halved"></i>Responsible Gambling</div>
@@ -1114,6 +1122,7 @@ function renderModal(){
 
 // RENDER
 function render(){
+  document.body.classList.toggle('theme-light',S.settings.theme==='light');
   const pend=S.watchlist.filter(w=>w.outcome==='pending').length;
   const pct=Math.min(100,Math.round((S.settings.dailyUsed/(S.settings.dailyLimit||10))*100));
   const navItems=[

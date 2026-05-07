@@ -27,6 +27,7 @@ const OddsIQServices = (() => {
   const DEFAULT_SETTINGS = {
     apiKey: CONFIG.oddsApiKey,
     oddsFormat:'american',
+    theme:'dark',
     hideHighRisk:false,
     dailyLimit:10,
     dailyUsed:0,
