@@ -177,6 +177,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);font-size:
 
 /* API ERROR */
 .api-err{background:var(--red-dim);border:1px solid rgba(255,77,106,.2);border-radius:var(--rl);padding:16px 20px;color:var(--red);font-size:13px;margin-bottom:16px;display:flex;align-items:flex-start;gap:10px;line-height:1.6;}
+.api-note{background:var(--gold-dim);border:1px solid rgba(245,200,66,.2);border-radius:var(--rl);padding:14px 18px;color:var(--gold);font-size:12px;margin-bottom:16px;display:flex;align-items:flex-start;gap:10px;line-height:1.6;}
 
 /* WATCHLIST TABLE */
 .tbl-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rx);overflow:hidden;}
@@ -312,7 +313,7 @@ const DEFAULT_SETTINGS = {
 
 // ── STATE ───────────────────────────────────────
 let S = {
-  page:'dashboard', loading:false, apiError:null,
+  page:'dashboard', loading:false, apiError:null, apiNotice:null,
   matches:[], sportFilter:'all', riskFilter:'all',
   bookFilter:'all', dateFilter:'all',
   selectedMatch:null, modal:null, addWatchMatch:null,
@@ -560,8 +561,22 @@ function generateParlaySuggestions(matches){
   ].filter(p=>p&&p.legs.length>=2);
 }
 
+function addAnalyzedMatch(list,m,sp){
+  m.sport_key=m.sport_key||sp;
+  const a=analyzeMatchV2(m);
+  if(a)list.push({...m,analysis:a});
+}
+async function loadOddsCache(){
+  const res=await fetch(`odds-cache.json?v=${Date.now()}`,{cache:'no-store'});
+  if(!res.ok)throw new Error(`cache ${res.status}`);
+  const payload=await res.json();
+  const all=[];
+  (payload.matches||[]).forEach(m=>addAnalyzedMatch(all,m,m.sport_key));
+  return{matches:all,generatedAt:payload.generatedAt};
+}
+
 async function loadOdds(){
-  S.loading=true;S.apiError=null;render();
+  S.loading=true;S.apiError=null;S.apiNotice=null;render();
   try{
     const sports=S.settings.activeSports.length?S.settings.activeSports:['basketball_nba'];
     const apiKey=(S.settings.apiKey||API_KEY).trim();
@@ -580,13 +595,25 @@ async function loadOdds(){
         const rem=res.headers.get('x-requests-remaining');
         if(rem)S.apiRemaining=parseInt(rem);
         const data=await res.json();
-        data.forEach(m=>{m.sport_key=sp;const a=analyzeMatchV2(m);if(a)all.push({...m,analysis:a});});
+        data.forEach(m=>addAnalyzedMatch(all,m,sp));
       }catch(e){errors.push(`${sp}: ${e.message}`);console.warn('Failed',sp,e.message);}
+    }
+    if(!all.length&&errors.length){
+      try{
+        const cached=await loadOddsCache();
+        if(cached.matches.length){
+          all.push(...cached.matches);
+          const d=cached.generatedAt?new Date(cached.generatedAt):null;
+          S.apiNotice=`Live odds API was blocked in this browser, so OddsIQ loaded the GitHub Pages odds cache${d?' from '+d.toLocaleString():''}.`;
+        }
+      }catch(cacheErr){
+        throw new Error(`No odds loaded. Last API error: ${errors[errors.length-1]}. Cache fallback also failed: ${cacheErr.message}`);
+      }
     }
     if(!all.length&&errors.length)throw new Error(`No odds loaded. Last API error: ${errors[errors.length-1]}`);
     all.sort((a,b)=>new Date(a.commence_time)-new Date(b.commence_time));
     S.matches=all;S.lastUpdated=new Date();S.loading=false;render();
-    toast(`${all.length} matches loaded`,'success');
+    toast(`${all.length} matches loaded${S.apiNotice?' from cache':''}`,'success');
   }catch(e){
     S.loading=false;S.apiError=e.message;render();toast('Failed to load odds','err');
   }
@@ -782,6 +809,7 @@ function pgDashboard(){
 </div>
 <div class="page">
   ${S.apiError?`<div class="api-err"><i class="fa fa-circle-exclamation fa-lg"></i><div><strong>API Error:</strong> ${S.apiError}<br><small>Check your API key in Settings or verify your request quota.</small></div></div>`:''}
+  ${S.apiNotice?`<div class="api-note"><i class="fa fa-database"></i><div><strong>Fallback data loaded.</strong> ${S.apiNotice}</div></div>`:''}
   <div class="filter-row">
     <label>Sport</label>
     <select onchange="S.sportFilter=this.value;render()">

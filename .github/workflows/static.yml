@@ -5,6 +5,9 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+  schedule:
+    # Refresh the odds cache twice daily to stay inside free API quota.
+    - cron: "17 */12 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,6 +34,43 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Build odds cache
+        shell: bash
+        env:
+          ODDS_API_KEY: 21de5f06a295e3dc6dc76689cef641ec
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const sports = ['americanfootball_nfl','basketball_nba','baseball_mlb','icehockey_nhl'];
+          const base = 'https://api.the-odds-api.com/v4';
+          const apiKey = process.env.ODDS_API_KEY;
+          const matches = [];
+          const errors = [];
+
+          async function loadSport(sp) {
+            const url = `${base}/sports/${sp}/odds/?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=h2h&oddsFormat=decimal&dateFormat=iso`;
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
+            const data = await res.json();
+            for (const match of data) matches.push({...match, sport_key: sp});
+          }
+
+          (async () => {
+            for (const sp of sports) {
+              try { await loadSport(sp); }
+              catch (err) { errors.push(`${sp}: ${err.message}`); }
+            }
+            fs.writeFileSync('odds-cache.json', JSON.stringify({
+              generatedAt: new Date().toISOString(),
+              sports,
+              matchCount: matches.length,
+              errors,
+              matches
+            }, null, 2));
+            console.log(`Cached ${matches.length} matches`);
+            if (matches.length === 0) process.exit(1);
+          })();
+          NODE
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
