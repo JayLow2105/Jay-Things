@@ -2,8 +2,10 @@ const OddsIQServices = (() => {
   const CONFIG = {
     oddsApiKey: '21de5f06a295e3dc6dc76689cef641ec',
     ballDontLieApiKey: 'd91314ba-05ef-4abc-8e06-4955bd5c4be4',
+    pandaScoreApiKey: 'GPNLt8aByVhAAlvPv8KCCteCgY5KSGcLsMAzJADgkrtgwxWUlzs',
     oddsBaseUrl: 'https://api.the-odds-api.com/v4',
     ballDontLieBaseUrl: 'https://api.balldontlie.io',
+    pandaScoreBaseUrl: 'https://api.pandascore.co',
     regions: 'us',
     markets: 'h2h',
   };
@@ -16,6 +18,10 @@ const OddsIQServices = (() => {
     {key:'soccer_epl',label:'EPL Soccer',short:'EPL',cls:'sp-def',bdlLeague:'epl'},
     {key:'americanfootball_ncaaf',label:'NCAAF',short:'NCAAF',cls:'sp-nfl',bdlLeague:'ncaaf'},
     {key:'basketball_ncaab',label:'NCAAB',short:'NCAAB',cls:'sp-nba',bdlLeague:'ncaab'},
+    {key:'esports_lol',label:'League of Legends',short:'LoL',cls:'sp-es',esportGame:'lol'},
+    {key:'esports_cs2',label:'Counter-Strike 2',short:'CS2',cls:'sp-es',esportGame:'csgo'},
+    {key:'esports_valorant',label:'VALORANT',short:'VAL',cls:'sp-es',esportGame:'valorant'},
+    {key:'esports_dota2',label:'Dota 2',short:'DOTA',cls:'sp-es',esportGame:'dota2'},
   ];
 
   const DEFAULT_SETTINGS = {
@@ -26,7 +32,7 @@ const OddsIQServices = (() => {
     dailyUsed:0,
     weeklyLimit:50,
     weeklyUsed:0,
-    activeSports:['americanfootball_nfl','basketball_nba','baseball_mlb','icehockey_nhl'],
+    activeSports:['americanfootball_nfl','basketball_nba','baseball_mlb','icehockey_nhl','esports_lol','esports_cs2','esports_valorant','esports_dota2'],
   };
 
   function toQuery(params) {
@@ -101,7 +107,35 @@ const OddsIQServices = (() => {
     },
   };
 
-  return {CONFIG, SPORTS, DEFAULT_SETTINGS, OddsService, BallDontLieService};
+  const PandaScoreService = {
+    gameForSport(sportKey) {
+      return SPORTS.find(s => s.key === sportKey)?.esportGame || null;
+    },
+
+    isEsport(sportKey) {
+      return Boolean(this.gameForSport(sportKey));
+    },
+
+    async request(game, endpoint, params = {}) {
+      if (!game) throw new Error('Missing PandaScore game');
+      const path = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+      const query = toQuery(params);
+      const url = `${CONFIG.pandaScoreBaseUrl}/${game}${path}${query ? `?${query}` : ''}`;
+      const res = await fetch(url, {
+        headers: {Authorization: `Bearer ${CONFIG.pandaScoreApiKey}`},
+      });
+      return parseJsonResponse(res, `PandaScore ${game}${path}`);
+    },
+
+    fetchUpcomingMatches(sportKey, params = {}) {
+      return this.request(this.gameForSport(sportKey), '/matches/upcoming', {
+        per_page: 20,
+        ...params,
+      });
+    },
+  };
+
+  return {CONFIG, SPORTS, DEFAULT_SETTINGS, OddsService, BallDontLieService, PandaScoreService};
 })();
 
 window.OddsIQServices = OddsIQServices;

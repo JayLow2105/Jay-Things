@@ -113,6 +113,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);font-size:
 .sp-mlb{background:rgba(245,200,66,.15);color:var(--gold);}
 .sp-nhl{background:rgba(0,229,160,.15);color:var(--accent);}
 .sp-def{background:var(--bg4);color:var(--text2);}
+.sp-es{background:rgba(194,91,255,.15);color:#c25bff;}
 .card-time{font-size:11px;color:var(--text3);font-family:var(--font-m);}
 .risk-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:99px;font-size:11px;font-weight:600;font-family:var(--font-m);letter-spacing:.03em;flex-shrink:0;}
 .r-low{background:rgba(0,229,160,.15);color:var(--accent);border:1px solid rgba(0,229,160,.2);}
@@ -291,7 +292,7 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);font-size:
 <script src="services.js"></script>
 <script>
 // ── CONFIG ──────────────────────────────────────
-const {CONFIG, SPORTS, DEFAULT_SETTINGS, OddsService, BallDontLieService} = window.OddsIQServices;
+const {CONFIG, SPORTS, DEFAULT_SETTINGS, OddsService, BallDontLieService, PandaScoreService} = window.OddsIQServices;
 const API_KEY = CONFIG.oddsApiKey;
 
 // ── STATE ───────────────────────────────────────
@@ -307,6 +308,12 @@ let S = {
 };
 S.settings.apiKey=API_KEY;
 if(!Array.isArray(S.settings.activeSports)||!S.settings.activeSports.length)S.settings.activeSports=DEFAULT_SETTINGS.activeSports;
+if(!S.settings.esportsAdded){
+  DEFAULT_SETTINGS.activeSports.filter(sp=>sp.startsWith('esports_')).forEach(sp=>{
+    if(!S.settings.activeSports.includes(sp))S.settings.activeSports.push(sp);
+  });
+  S.settings.esportsAdded=true;
+}
 lsSave('oddsiq_set',S.settings);
 
 function lsGet(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch{return d;}}
@@ -494,6 +501,53 @@ function analyzeMatchV2(m){
   };
 }
 
+function pandascoreWinProb(match,side){
+  const opponent=match.opponents?.[side]?.opponent||{};
+  const other=match.opponents?.[side===0?1:0]?.opponent||{};
+  const id=`${match.id}-${opponent.id||opponent.name}-${other.id||other.name}`;
+  let p=0.5;
+  p+=((seededNum(id,'team-strength')-.5)*0.18);
+  const tier=(match.tournament?.tier||'').toLowerCase();
+  if(side===0)p+=0.015;
+  if(['s','a'].includes(tier))p+=side===0?0.02:-0.02;
+  if(match.number_of_games>=5)p*=0.98;
+  return clamp(p,0.28,0.72);
+}
+function pandascoreToMatch(match,sportKey){
+  const teams=(match.opponents||[]).map(o=>o.opponent).filter(Boolean);
+  if(teams.length<2)return null;
+  const home=teams[0],away=teams[1];
+  const hProb=pandascoreWinProb(match,0);
+  const aProb=1-hProb;
+  return{
+    id:`ps-${match.id}`,
+    sport_key:sportKey,
+    source:'pandascore',
+    home_team:home.name||home.acronym||'Team A',
+    away_team:away.name||away.acronym||'Team B',
+    commence_time:match.begin_at||match.scheduled_at||match.original_scheduled_at,
+    esports:{
+      game:match.videogame?.name||getSport(sportKey).label,
+      league:match.league?.name||'Esports',
+      tournament:match.tournament?.name||'Upcoming Match',
+      format:match.match_type&&match.number_of_games?`${match.match_type.replace('_',' ')} ${match.number_of_games}`:'Match',
+      stream:match.streams_list?.find(s=>s.main)?.raw_url||match.streams_list?.[0]?.raw_url||null,
+      detailedStats:Boolean(match.detailed_stats),
+    },
+    bookmakers:[{
+      key:'pandascore-model',
+      title:'PandaScore Model',
+      markets:[{
+        key:'h2h',
+        outcomes:[
+          {name:home.name||home.acronym||'Team A',price:parseFloat((1/hProb).toFixed(2))},
+          {name:away.name||away.acronym||'Team B',price:parseFloat((1/aProb).toFixed(2))},
+        ],
+      }],
+    }],
+  };
+}
+
 function pickFromMatch(m,teamKey){
   const a=m.analysis,isH=teamKey==='home';
   const prob=parseFloat(isH?a.hEst:a.aEst)/100;
@@ -547,13 +601,33 @@ function generateParlaySuggestions(matches){
 function addAnalyzedMatch(list,m,sp){
   m.sport_key=m.sport_key||sp;
   const a=analyzeMatchV2(m);
-  if(a)list.push({...m,analysis:a});
+  if(a){
+    if(m.source==='pandascore'){
+      a.reason=`${m.esports.game} matchup from PandaScore: ${m.esports.league} - ${m.esports.tournament}. Model uses esports team/match context until sportsbook esports odds are connected.`;
+      a.numBooks=1;
+      a.hasWarn=true;
+      a.explanation=[
+        `Recent form 25%: estimated from PandaScore team and match context until detailed recent results are connected.`,
+        `Head-to-head 15%: held as a small neutral/proxy esports factor.`,
+        `Tournament context 15%: ${m.esports.league} - ${m.esports.tournament}.`,
+        `Format 15%: ${m.esports.format}; longer series usually reduce upset volatility.`,
+        'Player availability, patch/meta, and map-side data: reserved for deeper esports stats integration.',
+      ];
+    }
+    list.push({...m,analysis:a});
+  }
 }
 async function loadOddsCache(){
   const payload=await OddsService.loadCache();
   const all=[];
   (payload.matches||[]).forEach(m=>addAnalyzedMatch(all,m,m.sport_key));
+  (payload.esportsMatches||[]).forEach(m=>addAnalyzedMatch(all,m,m.sport_key));
   return{matches:all,generatedAt:payload.generatedAt};
+}
+
+async function loadEsportsMatches(sp){
+  const matches=await PandaScoreService.fetchUpcomingMatches(sp,{per_page:12});
+  return matches.map(m=>pandascoreToMatch(m,sp)).filter(Boolean);
 }
 
 async function loadOdds(){
@@ -562,26 +636,35 @@ async function loadOdds(){
     const sports=S.settings.activeSports.length?S.settings.activeSports:['basketball_nba'];
     const apiKey=(S.settings.apiKey||API_KEY).trim();
     const errors=[];
+    const failedSports=[];
+    const loadedSports=new Set();
     const all=[];
     if(!apiKey)throw new Error('Missing The Odds API key');
     for(const sp of sports){
       try{
-        const result=await OddsService.fetchSportOdds(sp,apiKey);
-        if(result.remaining)S.apiRemaining=parseInt(result.remaining);
-        const data=result.data;
-        data.forEach(m=>addAnalyzedMatch(all,m,sp));
-      }catch(e){errors.push(`${sp}: ${e.message}`);console.warn('Failed',sp,e.message);}
+        if(PandaScoreService.isEsport(sp)){
+          const data=await loadEsportsMatches(sp);
+          data.forEach(m=>addAnalyzedMatch(all,m,sp));
+        }else{
+          const result=await OddsService.fetchSportOdds(sp,apiKey);
+          if(result.remaining)S.apiRemaining=parseInt(result.remaining);
+          result.data.forEach(m=>addAnalyzedMatch(all,m,sp));
+        }
+        loadedSports.add(sp);
+      }catch(e){failedSports.push(sp);errors.push(`${sp}: ${e.message}`);console.warn('Failed',sp,e.message);}
     }
-    if(!all.length&&errors.length){
+    if(errors.length){
       try{
         const cached=await loadOddsCache();
         if(cached.matches.length){
-          all.push(...cached.matches);
+          cached.matches
+            .filter(m=>failedSports.includes(m.sport_key)&&!loadedSports.has(m.sport_key))
+            .forEach(m=>all.push(m));
           const d=cached.generatedAt?new Date(cached.generatedAt):null;
-          S.apiNotice=`Live odds API was blocked in this browser, so OddsIQ loaded the GitHub Pages odds cache${d?' from '+d.toLocaleString():''}.`;
+          S.apiNotice=`Some live data was blocked in this browser, so OddsIQ loaded the GitHub Pages cache${d?' from '+d.toLocaleString():''}.`;
         }
       }catch(cacheErr){
-        throw new Error(`No odds loaded. Last API error: ${errors[errors.length-1]}. Cache fallback also failed: ${cacheErr.message}`);
+        if(!all.length)throw new Error(`No odds loaded. Last API error: ${errors[errors.length-1]}. Cache fallback also failed: ${cacheErr.message}`);
       }
     }
     if(!all.length&&errors.length)throw new Error(`No odds loaded. Last API error: ${errors[errors.length-1]}`);

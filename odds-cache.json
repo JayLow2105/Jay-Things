@@ -1,12 +1,19 @@
 {
-  "generatedAt": "2026-05-07T22:06:02.594Z",
+  "generatedAt": "2026-05-07T22:47:09.034Z",
   "sports": [
     "americanfootball_nfl",
     "basketball_nba",
     "baseball_mlb",
     "icehockey_nhl"
   ],
-  "matchCount": 27,
+  "esports": [
+    "esports_lol",
+    "esports_cs2",
+    "esports_valorant",
+    "esports_dota2"
+  ],
+  "matchCount": 25,
+  "esportsMatchCount": 47,
   "errors": [],
   "matches": [
     {
@@ -20,11 +27,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:51Z",
+          "last_update": "2026-05-07T22:46:49Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:51Z",
+              "last_update": "2026-05-07T22:46:49Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Rams",
@@ -51,19 +58,19 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:47:01Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:47:01Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
-                  "price": 2.38
+                  "price": 2.42
                 },
                 {
                   "name": "Detroit Pistons",
-                  "price": 1.61
+                  "price": 1.6
                 }
               ]
             }
@@ -72,11 +79,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:43Z",
+          "last_update": "2026-05-07T22:46:42Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:43Z",
+              "last_update": "2026-05-07T22:46:42Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
@@ -93,11 +100,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:46:27Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:46:27Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
@@ -114,19 +121,19 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:27Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:27Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
-                  "price": 2.37
+                  "price": 2.49
                 },
                 {
                   "name": "Detroit Pistons",
-                  "price": 1.64
+                  "price": 1.6
                 }
               ]
             }
@@ -135,19 +142,19 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:46:28Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:46:28Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
-                  "price": 2.36
+                  "price": 2.48
                 },
                 {
                   "name": "Detroit Pistons",
-                  "price": 1.64
+                  "price": 1.6
                 }
               ]
             }
@@ -156,19 +163,19 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:43Z",
+          "last_update": "2026-05-07T22:45:54Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:43Z",
+              "last_update": "2026-05-07T22:45:54Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
-                  "price": 2.35
+                  "price": 2.4
                 },
                 {
                   "name": "Detroit Pistons",
-                  "price": 1.62
+                  "price": 1.59
                 }
               ]
             }
@@ -177,11 +184,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:04:54Z",
+          "last_update": "2026-05-07T22:45:54Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:54Z",
+              "last_update": "2026-05-07T22:45:54Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
@@ -198,11 +205,11 @@
         {
           "key": "bovada",
           "title": "Bovada",
-          "last_update": "2026-05-07T22:05:44Z",
+          "last_update": "2026-05-07T22:45:38Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:44Z",
+              "last_update": "2026-05-07T22:45:38Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
@@ -219,11 +226,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:04:54Z",
+          "last_update": "2026-05-07T22:47:01Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:54Z",
+              "last_update": "2026-05-07T22:47:01Z",
               "outcomes": [
                 {
                   "name": "Cleveland Cavaliers",
@@ -250,32 +257,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:43Z",
+          "last_update": "2026-05-07T22:46:42Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:43Z",
-              "outcomes": [
-                {
-                  "name": "Los Angeles Lakers",
-                  "price": 7.25
-                },
-                {
-                  "name": "Oklahoma City Thunder",
-                  "price": 1.11
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:43Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:43Z",
+              "last_update": "2026-05-07T22:46:42Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Lakers",
@@ -290,13 +276,34 @@
           ]
         },
         {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:28Z",
+          "key": "betmgm",
+          "title": "BetMGM",
+          "last_update": "2026-05-07T22:45:54Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:45:54Z",
+              "outcomes": [
+                {
+                  "name": "Los Angeles Lakers",
+                  "price": 7.25
+                },
+                {
+                  "name": "Oklahoma City Thunder",
+                  "price": 1.1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "fanduel",
+          "title": "FanDuel",
+          "last_update": "2026-05-07T22:47:01Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-05-07T22:47:01Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Lakers",
@@ -313,11 +320,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:46:27Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:46:27Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Lakers",
@@ -334,15 +341,15 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:27Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:27Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Lakers",
-                  "price": 7.14
+                  "price": 6.9
                 },
                 {
                   "name": "Oklahoma City Thunder",
@@ -355,19 +362,19 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:46:28Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:46:28Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Lakers",
-                  "price": 6.95
+                  "price": 6.74
                 },
                 {
                   "name": "Oklahoma City Thunder",
-                  "price": 1.11
+                  "price": 1.12
                 }
               ]
             }
@@ -376,15 +383,15 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:04:54Z",
+          "last_update": "2026-05-07T22:45:54Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:54Z",
+              "last_update": "2026-05-07T22:45:54Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Lakers",
-                  "price": 7.14
+                  "price": 6.96
                 },
                 {
                   "name": "Oklahoma City Thunder",
@@ -397,11 +404,11 @@
         {
           "key": "bovada",
           "title": "Bovada",
-          "last_update": "2026-05-07T22:05:44Z",
+          "last_update": "2026-05-07T22:45:38Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:44Z",
+              "last_update": "2026-05-07T22:45:38Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Lakers",
@@ -418,19 +425,19 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:04:54Z",
+          "last_update": "2026-05-07T22:47:01Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:54Z",
+              "last_update": "2026-05-07T22:47:01Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Lakers",
-                  "price": 6.9
+                  "price": 6.65
                 },
                 {
                   "name": "Oklahoma City Thunder",
-                  "price": 1.11
+                  "price": 1.12
                 }
               ]
             }
@@ -449,11 +456,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:47:01Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:47:01Z",
               "outcomes": [
                 {
                   "name": "New York Knicks",
@@ -470,11 +477,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:43Z",
+          "last_update": "2026-05-07T22:46:42Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:43Z",
+              "last_update": "2026-05-07T22:46:42Z",
               "outcomes": [
                 {
                   "name": "New York Knicks",
@@ -491,11 +498,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:43Z",
+          "last_update": "2026-05-07T22:45:54Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:43Z",
+              "last_update": "2026-05-07T22:45:54Z",
               "outcomes": [
                 {
                   "name": "New York Knicks",
@@ -512,11 +519,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:46:27Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:46:27Z",
               "outcomes": [
                 {
                   "name": "New York Knicks",
@@ -524,7 +531,7 @@
                 },
                 {
                   "name": "Philadelphia 76ers",
-                  "price": 1.8
+                  "price": 1.82
                 }
               ]
             }
@@ -533,11 +540,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:27Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:27Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "New York Knicks",
@@ -554,11 +561,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:46:28Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:46:28Z",
               "outcomes": [
                 {
                   "name": "New York Knicks",
@@ -575,11 +582,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:04:54Z",
+          "last_update": "2026-05-07T22:45:54Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:54Z",
+              "last_update": "2026-05-07T22:45:54Z",
               "outcomes": [
                 {
                   "name": "New York Knicks",
@@ -596,11 +603,11 @@
         {
           "key": "bovada",
           "title": "Bovada",
-          "last_update": "2026-05-07T22:05:44Z",
+          "last_update": "2026-05-07T22:45:38Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:44Z",
+              "last_update": "2026-05-07T22:45:38Z",
               "outcomes": [
                 {
                   "name": "New York Knicks",
@@ -627,19 +634,19 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:47:01Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:47:01Z",
               "outcomes": [
                 {
                   "name": "Minnesota Timberwolves",
-                  "price": 2.62
+                  "price": 2.64
                 },
                 {
                   "name": "San Antonio Spurs",
-                  "price": 1.52
+                  "price": 1.51
                 }
               ]
             }
@@ -648,11 +655,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:43Z",
+          "last_update": "2026-05-07T22:46:42Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:43Z",
+              "last_update": "2026-05-07T22:46:42Z",
               "outcomes": [
                 {
                   "name": "Minnesota Timberwolves",
@@ -669,11 +676,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:46:27Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:46:27Z",
               "outcomes": [
                 {
                   "name": "Minnesota Timberwolves",
@@ -690,11 +697,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:43Z",
+          "last_update": "2026-05-07T22:45:54Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:43Z",
+              "last_update": "2026-05-07T22:45:54Z",
               "outcomes": [
                 {
                   "name": "Minnesota Timberwolves",
@@ -711,11 +718,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:28Z",
+          "last_update": "2026-05-07T22:46:28Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:28Z",
+              "last_update": "2026-05-07T22:46:28Z",
               "outcomes": [
                 {
                   "name": "Minnesota Timberwolves",
@@ -732,11 +739,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:27Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:27Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Minnesota Timberwolves",
@@ -753,11 +760,11 @@
         {
           "key": "bovada",
           "title": "Bovada",
-          "last_update": "2026-05-07T22:05:44Z",
+          "last_update": "2026-05-07T22:45:38Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:44Z",
+              "last_update": "2026-05-07T22:45:38Z",
               "outcomes": [
                 {
                   "name": "Minnesota Timberwolves",
@@ -774,11 +781,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:04:54Z",
+          "last_update": "2026-05-07T22:45:54Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:54Z",
+              "last_update": "2026-05-07T22:45:54Z",
               "outcomes": [
                 {
                   "name": "Minnesota Timberwolves",
@@ -787,173 +794,6 @@
                 {
                   "name": "San Antonio Spurs",
                   "price": 1.53
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "db06eeec096bc60532c3b1aa5d4235a0",
-      "sport_key": "baseball_mlb",
-      "sport_title": "MLB",
-      "commence_time": "2026-05-07T19:11:00Z",
-      "home_team": "Colorado Rockies",
-      "away_team": "New York Mets",
-      "bookmakers": [
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "last_update": "2026-05-07T22:01:18Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:01:18Z",
-              "outcomes": [
-                {
-                  "name": "Colorado Rockies",
-                  "price": 1
-                },
-                {
-                  "name": "New York Mets",
-                  "price": 31
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "last_update": "2026-05-07T22:02:59Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:02:59Z",
-              "outcomes": [
-                {
-                  "name": "Colorado Rockies",
-                  "price": 1.13
-                },
-                {
-                  "name": "New York Mets",
-                  "price": 5.5
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "last_update": "2026-05-07T22:00:08Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:00:08Z",
-              "outcomes": [
-                {
-                  "name": "Colorado Rockies",
-                  "price": 1.01
-                },
-                {
-                  "name": "New York Mets",
-                  "price": 29
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "4d8a7d6f10d4e381df3410c93345b071",
-      "sport_key": "baseball_mlb",
-      "sport_title": "MLB",
-      "commence_time": "2026-05-07T19:41:00Z",
-      "home_team": "Arizona Diamondbacks",
-      "away_team": "Pittsburgh Pirates",
-      "bookmakers": [
-        {
-          "key": "fanduel",
-          "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
-              "outcomes": [
-                {
-                  "name": "Arizona Diamondbacks",
-                  "price": 11.6
-                },
-                {
-                  "name": "Pittsburgh Pirates",
-                  "price": 1.03
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "draftkings",
-          "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
-              "outcomes": [
-                {
-                  "name": "Arizona Diamondbacks",
-                  "price": 9
-                },
-                {
-                  "name": "Pittsburgh Pirates",
-                  "price": 1.05
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
-              "outcomes": [
-                {
-                  "name": "Arizona Diamondbacks",
-                  "price": 12.5
-                },
-                {
-                  "name": "Pittsburgh Pirates",
-                  "price": 1.03
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "last_update": "2026-05-07T22:05:34Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:34Z",
-              "outcomes": [
-                {
-                  "name": "Arizona Diamondbacks",
-                  "price": 15
-                },
-                {
-                  "name": "Pittsburgh Pirates",
-                  "price": 1.02
                 }
               ]
             }
@@ -972,19 +812,19 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Athletics",
-                  "price": 2.08
+                  "price": 1.49
                 },
                 {
                   "name": "Philadelphia Phillies",
-                  "price": 1.79
+                  "price": 2.58
                 }
               ]
             }
@@ -993,19 +833,19 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:42:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:42:52Z",
               "outcomes": [
                 {
                   "name": "Athletics",
-                  "price": 2.13
+                  "price": 2.12
                 },
                 {
                   "name": "Philadelphia Phillies",
-                  "price": 1.8
+                  "price": 1.81
                 }
               ]
             }
@@ -1014,19 +854,19 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:42:00Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:42:00Z",
               "outcomes": [
                 {
                   "name": "Athletics",
-                  "price": 2.13
+                  "price": 2.12
                 },
                 {
                   "name": "Philadelphia Phillies",
-                  "price": 1.8
+                  "price": 1.81
                 }
               ]
             }
@@ -1035,19 +875,19 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Athletics",
-                  "price": 2.14
+                  "price": 1.48
                 },
                 {
                   "name": "Philadelphia Phillies",
-                  "price": 1.73
+                  "price": 2.56
                 }
               ]
             }
@@ -1056,40 +896,19 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Athletics",
-                  "price": 2.1
+                  "price": 1.48
                 },
                 {
                   "name": "Philadelphia Phillies",
-                  "price": 1.74
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "last_update": "2026-05-07T22:05:34Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:34Z",
-              "outcomes": [
-                {
-                  "name": "Athletics",
-                  "price": 2.09
-                },
-                {
-                  "name": "Philadelphia Phillies",
-                  "price": 1.76
+                  "price": 2.65
                 }
               ]
             }
@@ -1098,11 +917,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:43:28Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:43:28Z",
               "outcomes": [
                 {
                   "name": "Athletics",
@@ -1119,19 +938,19 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:15Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:15Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Athletics",
-                  "price": 2.14
+                  "price": 1.5
                 },
                 {
                   "name": "Philadelphia Phillies",
-                  "price": 1.71
+                  "price": 2.48
                 }
               ]
             }
@@ -1140,19 +959,19 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:05:55Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:55Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Athletics",
-                  "price": 2.12
+                  "price": 1.95
                 },
                 {
                   "name": "Philadelphia Phillies",
-                  "price": 1.76
+                  "price": 1.8
                 }
               ]
             }
@@ -1171,19 +990,19 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Baltimore Orioles",
-                  "price": 2.08
+                  "price": 2.32
                 },
                 {
                   "name": "Miami Marlins",
-                  "price": 1.79
+                  "price": 1.59
                 }
               ]
             }
@@ -1192,19 +1011,19 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:42:00Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:42:00Z",
               "outcomes": [
                 {
                   "name": "Baltimore Orioles",
-                  "price": 2.11
+                  "price": 2.09
                 },
                 {
                   "name": "Miami Marlins",
-                  "price": 1.82
+                  "price": 1.83
                 }
               ]
             }
@@ -1213,19 +1032,19 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:40:20Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:40:20Z",
               "outcomes": [
                 {
                   "name": "Baltimore Orioles",
-                  "price": 2.11
+                  "price": 2.09
                 },
                 {
                   "name": "Miami Marlins",
-                  "price": 1.82
+                  "price": 1.83
                 }
               ]
             }
@@ -1234,19 +1053,19 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Baltimore Orioles",
-                  "price": 2.09
+                  "price": 2.21
                 },
                 {
                   "name": "Miami Marlins",
-                  "price": 1.76
+                  "price": 1.63
                 }
               ]
             }
@@ -1255,40 +1074,19 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Baltimore Orioles",
-                  "price": 2.05
+                  "price": 2.3
                 },
                 {
                   "name": "Miami Marlins",
-                  "price": 1.77
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "last_update": "2026-05-07T22:05:34Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:34Z",
-              "outcomes": [
-                {
-                  "name": "Baltimore Orioles",
-                  "price": 2.08
-                },
-                {
-                  "name": "Miami Marlins",
-                  "price": 1.77
+                  "price": 1.62
                 }
               ]
             }
@@ -1297,19 +1095,19 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:43:28Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:43:27Z",
               "outcomes": [
                 {
                   "name": "Baltimore Orioles",
-                  "price": 2.14
+                  "price": 2.13
                 },
                 {
                   "name": "Miami Marlins",
-                  "price": 1.8
+                  "price": 1.81
                 }
               ]
             }
@@ -1318,19 +1116,19 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:15Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:15Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Baltimore Orioles",
-                  "price": 2.1
+                  "price": 2.23
                 },
                 {
                   "name": "Miami Marlins",
-                  "price": 1.73
+                  "price": 1.6
                 }
               ]
             }
@@ -1339,19 +1137,19 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:05:55Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:55Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Baltimore Orioles",
-                  "price": 2.09
+                  "price": 2.2
                 },
                 {
                   "name": "Miami Marlins",
-                  "price": 1.78
+                  "price": 1.65
                 }
               ]
             }
@@ -1370,11 +1168,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
@@ -1391,19 +1189,19 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
-                  "price": 1.91
+                  "price": 1.88
                 },
                 {
                   "name": "Tampa Bay Rays",
-                  "price": 2
+                  "price": 2.03
                 }
               ]
             }
@@ -1412,19 +1210,19 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
-                  "price": 1.91
+                  "price": 1.88
                 },
                 {
                   "name": "Tampa Bay Rays",
-                  "price": 2
+                  "price": 2.03
                 }
               ]
             }
@@ -1433,11 +1231,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
@@ -1454,15 +1252,36 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
-                  "price": 1.87
+                  "price": 1.91
+                },
+                {
+                  "name": "Tampa Bay Rays",
+                  "price": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betrivers",
+          "title": "BetRivers",
+          "last_update": "2026-05-07T22:46:16Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-05-07T22:46:16Z",
+              "outcomes": [
+                {
+                  "name": "Boston Red Sox",
+                  "price": 1.83
                 },
                 {
                   "name": "Tampa Bay Rays",
@@ -1473,63 +1292,21 @@
           ]
         },
         {
-          "key": "bovada",
-          "title": "Bovada",
-          "last_update": "2026-05-07T22:05:34Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:34Z",
-              "outcomes": [
-                {
-                  "name": "Boston Red Sox",
-                  "price": 1.85
-                },
-                {
-                  "name": "Tampa Bay Rays",
-                  "price": 1.98
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "betrivers",
-          "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:15Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:15Z",
-              "outcomes": [
-                {
-                  "name": "Boston Red Sox",
-                  "price": 1.83
-                },
-                {
-                  "name": "Tampa Bay Rays",
-                  "price": 1.96
-                }
-              ]
-            }
-          ]
-        },
-        {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
-                  "price": 1.93
+                  "price": 1.92
                 },
                 {
                   "name": "Tampa Bay Rays",
-                  "price": 1.98
+                  "price": 1.99
                 }
               ]
             }
@@ -1538,11 +1315,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:05:55Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:55Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
@@ -1569,11 +1346,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -1590,19 +1367,19 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
-                  "price": 1.63
+                  "price": 1.65
                 },
                 {
                   "name": "St. Louis Cardinals",
-                  "price": 2.43
+                  "price": 2.4
                 }
               ]
             }
@@ -1611,19 +1388,19 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
-                  "price": 1.63
+                  "price": 1.65
                 },
                 {
                   "name": "St. Louis Cardinals",
-                  "price": 2.43
+                  "price": 2.4
                 }
               ]
             }
@@ -1632,19 +1409,19 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
-                  "price": 1.63
+                  "price": 1.65
                 },
                 {
                   "name": "St. Louis Cardinals",
-                  "price": 2.41
+                  "price": 2.38
                 }
               ]
             }
@@ -1653,11 +1430,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -1674,15 +1451,15 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
-                  "price": 1.6
+                  "price": 1.59
                 },
                 {
                   "name": "St. Louis Cardinals",
@@ -1695,11 +1472,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:15Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:15Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -1716,11 +1493,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:05:55Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:55Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -1729,27 +1506,6 @@
                 {
                   "name": "St. Louis Cardinals",
                   "price": 2.37
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "key": "bovada",
-          "title": "Bovada",
-          "last_update": "2026-05-07T22:05:34Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:34Z",
-              "outcomes": [
-                {
-                  "name": "San Diego Padres",
-                  "price": 1.61
-                },
-                {
-                  "name": "St. Louis Cardinals",
-                  "price": 2.38
                 }
               ]
             }
@@ -1768,11 +1524,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Cincinnati Reds",
@@ -1789,11 +1545,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Cincinnati Reds",
@@ -1810,11 +1566,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Cincinnati Reds",
@@ -1831,11 +1587,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Cincinnati Reds",
@@ -1852,11 +1608,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Cincinnati Reds",
@@ -1883,19 +1639,19 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Colorado Rockies",
-                  "price": 2.72
+                  "price": 2.84
                 },
                 {
                   "name": "Philadelphia Phillies",
-                  "price": 1.49
+                  "price": 1.45
                 }
               ]
             }
@@ -1904,11 +1660,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Colorado Rockies",
@@ -1925,11 +1681,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Colorado Rockies",
@@ -1946,15 +1702,36 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Colorado Rockies",
-                  "price": 2.63
+                  "price": 2.69
+                },
+                {
+                  "name": "Philadelphia Phillies",
+                  "price": 1.48
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "last_update": "2026-05-07T22:46:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-05-07T22:46:52Z",
+              "outcomes": [
+                {
+                  "name": "Colorado Rockies",
+                  "price": 2.65
                 },
                 {
                   "name": "Philadelphia Phillies",
@@ -1965,34 +1742,13 @@
           ]
         },
         {
-          "key": "betmgm",
-          "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
-          "markets": [
-            {
-              "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
-              "outcomes": [
-                {
-                  "name": "Colorado Rockies",
-                  "price": 2.55
-                },
-                {
-                  "name": "Philadelphia Phillies",
-                  "price": 1.53
-                }
-              ]
-            }
-          ]
-        },
-        {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Colorado Rockies",
@@ -2019,11 +1775,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Angels",
@@ -2040,11 +1796,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Angels",
@@ -2061,11 +1817,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Angels",
@@ -2082,11 +1838,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Angels",
@@ -2103,11 +1859,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Angels",
@@ -2124,11 +1880,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Los Angeles Angels",
@@ -2155,11 +1911,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
@@ -2176,11 +1932,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Boston Red Sox",
@@ -2189,6 +1945,27 @@
                 {
                   "name": "Tampa Bay Rays",
                   "price": 2.19
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "last_update": "2026-05-07T22:46:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-05-07T22:46:52Z",
+              "outcomes": [
+                {
+                  "name": "Boston Red Sox",
+                  "price": 1.71
+                },
+                {
+                  "name": "Tampa Bay Rays",
+                  "price": 2.18
                 }
               ]
             }
@@ -2207,11 +1984,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Miami Marlins",
@@ -2228,11 +2005,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Miami Marlins",
@@ -2249,11 +2026,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Miami Marlins",
@@ -2270,11 +2047,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Miami Marlins",
@@ -2291,11 +2068,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Miami Marlins",
@@ -2312,11 +2089,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Miami Marlins",
@@ -2343,11 +2120,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Cleveland Guardians",
@@ -2364,11 +2141,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Cleveland Guardians",
@@ -2385,11 +2162,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Cleveland Guardians",
@@ -2406,11 +2183,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Cleveland Guardians",
@@ -2427,11 +2204,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Cleveland Guardians",
@@ -2448,11 +2225,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Cleveland Guardians",
@@ -2479,11 +2256,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Chicago White Sox",
@@ -2500,11 +2277,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Chicago White Sox",
@@ -2521,11 +2298,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Chicago White Sox",
@@ -2542,11 +2319,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Chicago White Sox",
@@ -2563,11 +2340,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Chicago White Sox",
@@ -2584,11 +2361,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Chicago White Sox",
@@ -2615,11 +2392,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Detroit Tigers",
@@ -2636,11 +2413,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Detroit Tigers",
@@ -2657,11 +2434,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Detroit Tigers",
@@ -2678,11 +2455,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Detroit Tigers",
@@ -2699,11 +2476,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Detroit Tigers",
@@ -2720,11 +2497,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Detroit Tigers",
@@ -2751,11 +2528,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Milwaukee Brewers",
@@ -2772,11 +2549,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Milwaukee Brewers",
@@ -2793,11 +2570,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Milwaukee Brewers",
@@ -2814,11 +2591,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Milwaukee Brewers",
@@ -2835,11 +2612,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Milwaukee Brewers",
@@ -2856,11 +2633,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Milwaukee Brewers",
@@ -2887,11 +2664,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Arizona Diamondbacks",
@@ -2908,11 +2685,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Arizona Diamondbacks",
@@ -2929,11 +2706,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Arizona Diamondbacks",
@@ -2960,11 +2737,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -2981,11 +2758,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -3002,11 +2779,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -3023,11 +2800,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -3044,11 +2821,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "San Diego Padres",
@@ -3075,11 +2852,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:52Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:52Z",
               "outcomes": [
                 {
                   "name": "Atlanta Braves",
@@ -3096,11 +2873,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Atlanta Braves",
@@ -3117,11 +2894,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:16Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:16Z",
               "outcomes": [
                 {
                   "name": "Atlanta Braves",
@@ -3138,19 +2915,19 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:53Z",
+          "last_update": "2026-05-07T22:46:51Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:53Z",
+              "last_update": "2026-05-07T22:46:51Z",
               "outcomes": [
                 {
                   "name": "Atlanta Braves",
-                  "price": 2
+                  "price": 1.98
                 },
                 {
                   "name": "Los Angeles Dodgers",
-                  "price": 1.83
+                  "price": 1.85
                 }
               ]
             }
@@ -3159,11 +2936,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:05:52Z",
+          "last_update": "2026-05-07T22:46:50Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:52Z",
+              "last_update": "2026-05-07T22:46:50Z",
               "outcomes": [
                 {
                   "name": "Atlanta Braves",
@@ -3172,6 +2949,27 @@
                 {
                   "name": "Los Angeles Dodgers",
                   "price": 1.91
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "betmgm",
+          "title": "BetMGM",
+          "last_update": "2026-05-07T22:46:52Z",
+          "markets": [
+            {
+              "key": "h2h",
+              "last_update": "2026-05-07T22:46:52Z",
+              "outcomes": [
+                {
+                  "name": "Atlanta Braves",
+                  "price": 1.95
+                },
+                {
+                  "name": "Los Angeles Dodgers",
+                  "price": 1.87
                 }
               ]
             }
@@ -3190,11 +2988,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:13Z",
+          "last_update": "2026-05-07T22:47:04Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:13Z",
+              "last_update": "2026-05-07T22:47:04Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
@@ -3211,11 +3009,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:12Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:12Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
@@ -3232,11 +3030,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:31Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:31Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
@@ -3244,7 +3042,7 @@
                 },
                 {
                   "name": "Philadelphia Flyers",
-                  "price": 2.43
+                  "price": 2.45
                 }
               ]
             }
@@ -3253,11 +3051,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:30Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:29Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
@@ -3274,11 +3072,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:48Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:48Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
@@ -3295,11 +3093,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:30Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:30Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
@@ -3316,11 +3114,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:04:57Z",
+          "last_update": "2026-05-07T22:47:04Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:57Z",
+              "last_update": "2026-05-07T22:47:04Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
@@ -3328,7 +3126,7 @@
                 },
                 {
                   "name": "Philadelphia Flyers",
-                  "price": 2.39
+                  "price": 2.38
                 }
               ]
             }
@@ -3337,11 +3135,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:04:57Z",
+          "last_update": "2026-05-07T22:45:56Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:57Z",
+              "last_update": "2026-05-07T22:45:56Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
@@ -3349,7 +3147,7 @@
                 },
                 {
                   "name": "Philadelphia Flyers",
-                  "price": 2.34
+                  "price": 2.33
                 }
               ]
             }
@@ -3358,19 +3156,19 @@
         {
           "key": "bovada",
           "title": "Bovada",
-          "last_update": "2026-05-07T22:04:22Z",
+          "last_update": "2026-05-07T22:44:14Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:22Z",
+              "last_update": "2026-05-07T22:44:14Z",
               "outcomes": [
                 {
                   "name": "Carolina Hurricanes",
-                  "price": 1.61
+                  "price": 1.6
                 },
                 {
                   "name": "Philadelphia Flyers",
-                  "price": 2.4
+                  "price": 2.42
                 }
               ]
             }
@@ -3389,11 +3187,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:13Z",
+          "last_update": "2026-05-07T22:47:04Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:13Z",
+              "last_update": "2026-05-07T22:47:04Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3410,11 +3208,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:12Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:12Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3431,11 +3229,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:30Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:29Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3452,11 +3250,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:30Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:30Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3473,11 +3271,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:04:57Z",
+          "last_update": "2026-05-07T22:45:56Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:57Z",
+              "last_update": "2026-05-07T22:45:56Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3494,11 +3292,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:48Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:48Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3515,11 +3313,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:04:57Z",
+          "last_update": "2026-05-07T22:47:04Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:57Z",
+              "last_update": "2026-05-07T22:47:04Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3536,11 +3334,11 @@
         {
           "key": "bovada",
           "title": "Bovada",
-          "last_update": "2026-05-07T22:04:22Z",
+          "last_update": "2026-05-07T22:44:14Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:22Z",
+              "last_update": "2026-05-07T22:44:14Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3557,11 +3355,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:31Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:31Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Buffalo Sabres",
@@ -3588,11 +3386,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:13Z",
+          "last_update": "2026-05-07T22:47:04Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:13Z",
+              "last_update": "2026-05-07T22:47:04Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3609,11 +3407,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:12Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:12Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3630,11 +3428,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:48Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:48Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3651,11 +3449,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:04:57Z",
+          "last_update": "2026-05-07T22:45:56Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:57Z",
+              "last_update": "2026-05-07T22:45:56Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3672,11 +3470,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:30Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:29Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3693,11 +3491,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:30Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:30Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3714,11 +3512,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:31Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:31Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3735,11 +3533,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:04:57Z",
+          "last_update": "2026-05-07T22:47:04Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:57Z",
+              "last_update": "2026-05-07T22:47:04Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3756,11 +3554,11 @@
         {
           "key": "bovada",
           "title": "Bovada",
-          "last_update": "2026-05-07T22:04:22Z",
+          "last_update": "2026-05-07T22:44:14Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:22Z",
+              "last_update": "2026-05-07T22:44:14Z",
               "outcomes": [
                 {
                   "name": "Anaheim Ducks",
@@ -3787,11 +3585,11 @@
         {
           "key": "draftkings",
           "title": "DraftKings",
-          "last_update": "2026-05-07T22:05:12Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:12Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3808,11 +3606,11 @@
         {
           "key": "fanduel",
           "title": "FanDuel",
-          "last_update": "2026-05-07T22:05:13Z",
+          "last_update": "2026-05-07T22:47:04Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:13Z",
+              "last_update": "2026-05-07T22:47:04Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3829,11 +3627,11 @@
         {
           "key": "betonlineag",
           "title": "BetOnline.ag",
-          "last_update": "2026-05-07T22:05:30Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:30Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3850,11 +3648,11 @@
         {
           "key": "lowvig",
           "title": "LowVig.ag",
-          "last_update": "2026-05-07T22:05:30Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:30Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3871,11 +3669,11 @@
         {
           "key": "betmgm",
           "title": "BetMGM",
-          "last_update": "2026-05-07T22:05:48Z",
+          "last_update": "2026-05-07T22:46:29Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:48Z",
+              "last_update": "2026-05-07T22:46:29Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3892,11 +3690,11 @@
         {
           "key": "mybookieag",
           "title": "MyBookie.ag",
-          "last_update": "2026-05-07T22:04:57Z",
+          "last_update": "2026-05-07T22:45:56Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:57Z",
+              "last_update": "2026-05-07T22:45:56Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3913,11 +3711,11 @@
         {
           "key": "betrivers",
           "title": "BetRivers",
-          "last_update": "2026-05-07T22:05:31Z",
+          "last_update": "2026-05-07T22:46:30Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:05:31Z",
+              "last_update": "2026-05-07T22:46:30Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3934,11 +3732,11 @@
         {
           "key": "betus",
           "title": "BetUS",
-          "last_update": "2026-05-07T22:04:57Z",
+          "last_update": "2026-05-07T22:47:04Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:57Z",
+              "last_update": "2026-05-07T22:47:04Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3955,11 +3753,11 @@
         {
           "key": "bovada",
           "title": "Bovada",
-          "last_update": "2026-05-07T22:04:22Z",
+          "last_update": "2026-05-07T22:44:14Z",
           "markets": [
             {
               "key": "h2h",
-              "last_update": "2026-05-07T22:04:22Z",
+              "last_update": "2026-05-07T22:44:14Z",
               "outcomes": [
                 {
                   "name": "Colorado Avalanche",
@@ -3968,6 +3766,1747 @@
                 {
                   "name": "Minnesota Wild",
                   "price": 2.07
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "esportsMatches": [
+    {
+      "id": "ps-1416676",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "NRG Esports",
+      "away_team": "CCG Esports",
+      "commence_time": "2026-05-07T23:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "North American Challengers League",
+        "tournament": "Regular Season",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/NACL",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "NRG Esports",
+                  "price": 2.31
+                },
+                {
+                  "name": "CCG Esports",
+                  "price": 1.76
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1417073",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "DN SOOPers Challengers",
+      "away_team": "HANJIN BRION Challengers",
+      "commence_time": "2026-05-08T05:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LCK Challengers League",
+        "tournament": "Rounds 1-2",
+        "format": "best of 3",
+        "stream": "https://play-origin.sooplive.com/afchall",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "DN SOOPers Challengers",
+                  "price": 1.78
+                },
+                {
+                  "name": "HANJIN BRION Challengers",
+                  "price": 2.28
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1417072",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "Dplus KIA Challengers",
+      "away_team": "KT Rolster Challengers",
+      "commence_time": "2026-05-08T05:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LCK Challengers League",
+        "tournament": "Rounds 1-2",
+        "format": "best of 3",
+        "stream": "https://play-origin.sooplive.com/afchall",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Dplus KIA Challengers",
+                  "price": 1.68
+                },
+                {
+                  "name": "KT Rolster Challengers",
+                  "price": 2.48
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1413474",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "T1",
+      "away_team": "DN SOOPers",
+      "commence_time": "2026-05-08T08:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LCK",
+        "tournament": "Rounds 1-2",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/lck",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "T1",
+                  "price": 1.79
+                },
+                {
+                  "name": "DN SOOPers",
+                  "price": 2.26
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1420941",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "Ultra Prime",
+      "away_team": "LNG Esports",
+      "commence_time": "2026-05-08T09:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LPL",
+        "tournament": "Group Nirvana",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/lplenglish",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Ultra Prime",
+                  "price": 2.01
+                },
+                {
+                  "name": "LNG Esports",
+                  "price": 1.99
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1413475",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "Kiwoom DRX",
+      "away_team": "Gen.G",
+      "commence_time": "2026-05-08T10:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LCK",
+        "tournament": "Rounds 1-2",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/lck",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Kiwoom DRX",
+                  "price": 1.7
+                },
+                {
+                  "name": "Gen.G",
+                  "price": 2.43
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1420942",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "JD Gaming",
+      "away_team": "Bilibili Gaming",
+      "commence_time": "2026-05-08T11:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LPL",
+        "tournament": "Group Ascend",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/lplenglish",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "JD Gaming",
+                  "price": 2.06
+                },
+                {
+                  "name": "Bilibili Gaming",
+                  "price": 1.94
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1402284",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "Karmine Corp",
+      "away_team": "G2 Esports",
+      "commence_time": "2026-05-08T14:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LEC",
+        "tournament": "Regular Season",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/lec",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Karmine Corp",
+                  "price": 1.81
+                },
+                {
+                  "name": "G2 Esports",
+                  "price": 2.24
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1469261",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "Baam Esports",
+      "away_team": "3BL Esports",
+      "commence_time": "2026-05-08T16:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "Arabian League",
+        "tournament": "Last Chance",
+        "format": "best of 5",
+        "stream": "https://www.twitch.tv/lolesports_ar",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Baam Esports",
+                  "price": 1.69
+                },
+                {
+                  "name": "3BL Esports",
+                  "price": 2.44
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1455222",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "GMBLERS ESPORTS",
+      "away_team": "Zena Esports",
+      "commence_time": "2026-05-08T16:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LIT",
+        "tournament": "Playoffs",
+        "format": "best of 5",
+        "stream": "https://www.twitch.tv/LITofficial",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "GMBLERS ESPORTS",
+                  "price": 2.02
+                },
+                {
+                  "name": "Zena Esports",
+                  "price": 1.98
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1402285",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "GIANTX",
+      "away_team": "Movistar KOI",
+      "commence_time": "2026-05-08T17:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "LEC",
+        "tournament": "Regular Season",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/lec",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "GIANTX",
+                  "price": 1.76
+                },
+                {
+                  "name": "Movistar KOI",
+                  "price": 2.32
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1416677",
+      "sport_key": "esports_lol",
+      "source": "pandascore",
+      "home_team": "Maryville University",
+      "away_team": "Winthrop University",
+      "commence_time": "2026-05-08T20:00:00Z",
+      "esports": {
+        "game": "LoL",
+        "league": "North American Challengers League",
+        "tournament": "Regular Season",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/NACL",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Maryville University",
+                  "price": 1.7
+                },
+                {
+                  "name": "Winthrop University",
+                  "price": 2.42
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1476929",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "XI Esport",
+      "away_team": "WRAITH PCIFIC",
+      "commence_time": "2026-05-08T08:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "European Pro League",
+        "tournament": "Group D",
+        "format": "best of 3",
+        "stream": "https://kick.com/eplcs_en",
+        "detailedStats": false
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "XI Esport",
+                  "price": 1.91
+                },
+                {
+                  "name": "WRAITH PCIFIC",
+                  "price": 2.1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1471663",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "SPARTA",
+      "away_team": "ex-RUBY",
+      "commence_time": "2026-05-08T08:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "NODWIN Clutch Series",
+        "tournament": "Group Stage",
+        "format": "best of 3",
+        "stream": "https://kick.com/nodwin_cs2",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "SPARTA",
+                  "price": 1.76
+                },
+                {
+                  "name": "ex-RUBY",
+                  "price": 2.32
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1469574",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "ALGO Esports",
+      "away_team": "BIG Academy",
+      "commence_time": "2026-05-08T08:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "United21",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://kick.com/united21_en",
+        "detailedStats": false
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "ALGO Esports",
+                  "price": 2.23
+                },
+                {
+                  "name": "BIG Academy",
+                  "price": 1.81
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1469214",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "TDK",
+      "away_team": "GenOne",
+      "commence_time": "2026-05-08T08:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "CCT Europe",
+        "tournament": "Group Stage",
+        "format": "best of 3",
+        "stream": "https://kick.com/cct_cs",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "TDK",
+                  "price": 1.92
+                },
+                {
+                  "name": "GenOne",
+                  "price": 2.08
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1467682",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "9INE",
+      "away_team": "Walczaki",
+      "commence_time": "2026-05-08T08:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "BC Game Masters",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/bcgamemasters",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "9INE",
+                  "price": 2.24
+                },
+                {
+                  "name": "Walczaki",
+                  "price": 1.8
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1476930",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "ENCE",
+      "away_team": "Prestige",
+      "commence_time": "2026-05-08T10:30:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "European Pro League",
+        "tournament": "Group D",
+        "format": "best of 3",
+        "stream": "https://kick.com/eplcs_en",
+        "detailedStats": false
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "ENCE",
+                  "price": 1.74
+                },
+                {
+                  "name": "Prestige",
+                  "price": 2.35
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1471664",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "AM Gaming",
+      "away_team": "MOUZ NXT",
+      "commence_time": "2026-05-08T11:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "NODWIN Clutch Series",
+        "tournament": "Group Stage",
+        "format": "best of 3",
+        "stream": "https://kick.com/nodwin_cs2",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "AM Gaming",
+                  "price": 1.92
+                },
+                {
+                  "name": "MOUZ NXT",
+                  "price": 2.09
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1470247",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "Atreides",
+      "away_team": "The Last Resort",
+      "commence_time": "2026-05-08T11:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "CCT Europe",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://kick.com/cct_cs3",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Atreides",
+                  "price": 2.12
+                },
+                {
+                  "name": "The Last Resort",
+                  "price": 1.89
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1469215",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "Omega",
+      "away_team": "INOX Division",
+      "commence_time": "2026-05-08T11:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "CCT Europe",
+        "tournament": "Group Stage",
+        "format": "best of 3",
+        "stream": "https://kick.com/cct_cs",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Omega",
+                  "price": 2.12
+                },
+                {
+                  "name": "INOX Division",
+                  "price": 1.89
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1467683",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "Team Nemesis",
+      "away_team": "CYBERSHOKE Esports",
+      "commence_time": "2026-05-08T11:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "BC Game Masters",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/bcgamemasters",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Team Nemesis",
+                  "price": 2.29
+                },
+                {
+                  "name": "CYBERSHOKE Esports",
+                  "price": 1.78
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1467626",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "Bounty Hunters Esports",
+      "away_team": "Keyd",
+      "commence_time": "2026-05-08T13:00:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "CCT South America",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://kick.com/cct_cs2",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Bounty Hunters Esports",
+                  "price": 1.78
+                },
+                {
+                  "name": "Keyd",
+                  "price": 2.28
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1470246",
+      "sport_key": "esports_cs2",
+      "source": "pandascore",
+      "home_team": "Benched gods",
+      "away_team": "NEW VISION",
+      "commence_time": "2026-05-08T13:45:00Z",
+      "esports": {
+        "game": "Counter-Strike",
+        "league": "CCT Europe",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://kick.com/cct_cs3",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Benched gods",
+                  "price": 1.71
+                },
+                {
+                  "name": "NEW VISION",
+                  "price": 2.42
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1475179",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "Paper Rex",
+      "away_team": "Global Esports",
+      "commence_time": "2026-05-08T08:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorant_pacific",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Paper Rex",
+                  "price": 1.81
+                },
+                {
+                  "name": "Global Esports",
+                  "price": 2.24
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1445677",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "XLG Gaming",
+      "away_team": "EDward Gaming",
+      "commence_time": "2026-05-08T09:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorantesports_cn",
+        "detailedStats": false
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "XLG Gaming",
+                  "price": 2.03
+                },
+                {
+                  "name": "EDward Gaming",
+                  "price": 1.97
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1475180",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "T1",
+      "away_team": "FULL SENSE",
+      "commence_time": "2026-05-08T10:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorant_pacific",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "T1",
+                  "price": 2.09
+                },
+                {
+                  "name": "FULL SENSE",
+                  "price": 1.92
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1445681",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "All Gamers",
+      "away_team": "Dragon Ranger Gaming",
+      "commence_time": "2026-05-08T11:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorantesports_cn",
+        "detailedStats": false
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "All Gamers",
+                  "price": 2.06
+                },
+                {
+                  "name": "Dragon Ranger Gaming",
+                  "price": 1.95
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1411907",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "FUT Esports",
+      "away_team": "Eternal Fire",
+      "commence_time": "2026-05-08T15:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorant_emea",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "FUT Esports",
+                  "price": 2.18
+                },
+                {
+                  "name": "Eternal Fire",
+                  "price": 1.85
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1411908",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "Fnatic",
+      "away_team": "Team Vitality",
+      "commence_time": "2026-05-08T18:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorant_emea",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Fnatic",
+                  "price": 1.86
+                },
+                {
+                  "name": "Team Vitality",
+                  "price": 2.16
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1411863",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "KRÜ Esports",
+      "away_team": "Evil Geniuses",
+      "commence_time": "2026-05-08T21:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Group Omega",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorant_americas",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "KRÜ Esports",
+                  "price": 1.86
+                },
+                {
+                  "name": "Evil Geniuses",
+                  "price": 2.16
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1411864",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "FURIA Esports",
+      "away_team": "100 Thieves",
+      "commence_time": "2026-05-09T00:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Group Omega",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorant_americas",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "FURIA Esports",
+                  "price": 1.76
+                },
+                {
+                  "name": "100 Thieves",
+                  "price": 2.31
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1475181",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "Rex Regum Qeon",
+      "away_team": "DetonatioN FocusMe",
+      "commence_time": "2026-05-09T08:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorant_pacific",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Rex Regum Qeon",
+                  "price": 2.23
+                },
+                {
+                  "name": "DetonatioN FocusMe",
+                  "price": 1.81
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1475182",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "Kiwoom DRX",
+      "away_team": "Nongshim RedForce",
+      "commence_time": "2026-05-09T10:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCT",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorant_pacific",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Kiwoom DRX",
+                  "price": 2.11
+                },
+                {
+                  "name": "Nongshim RedForce",
+                  "price": 1.9
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1428596",
+      "sport_key": "esports_valorant",
+      "source": "pandascore",
+      "home_team": "CGN Esports",
+      "away_team": "RIZON",
+      "commence_time": "2026-05-09T13:00:00Z",
+      "esports": {
+        "game": "Valorant",
+        "league": "VCL",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://www.twitch.tv/valorantleague_dach",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "CGN Esports",
+                  "price": 2.31
+                },
+                {
+                  "name": "RIZON",
+                  "price": 1.76
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1474740",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "GLYPH",
+      "away_team": "InterActive Philippines",
+      "commence_time": "2026-05-08T03:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "EPL World Series",
+        "tournament": "Group Stage",
+        "format": "best of 3",
+        "stream": "https://kick.com/epldota_en1",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "GLYPH",
+                  "price": 1.77
+                },
+                {
+                  "name": "InterActive Philippines",
+                  "price": 2.29
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1474741",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "Satan666",
+      "away_team": "GLYPH",
+      "commence_time": "2026-05-08T06:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "EPL World Series",
+        "tournament": "Group Stage",
+        "format": "best of 3",
+        "stream": "https://kick.com/epldota_en1",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Satan666",
+                  "price": 2.12
+                },
+                {
+                  "name": "GLYPH",
+                  "price": 1.89
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1481489",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "Power Rangers",
+      "away_team": "Team Lynx",
+      "commence_time": "2026-05-08T09:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "European Pro League",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://kick.com/epldota_en2",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Power Rangers",
+                  "price": 1.83
+                },
+                {
+                  "name": "Team Lynx",
+                  "price": 2.2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1474742",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "Grind Back",
+      "away_team": "WinteR SquadronS",
+      "commence_time": "2026-05-08T09:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "EPL World Series",
+        "tournament": "Group Stage",
+        "format": "best of 3",
+        "stream": "https://kick.com/epldota_en1",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Grind Back",
+                  "price": 1.79
+                },
+                {
+                  "name": "WinteR SquadronS",
+                  "price": 2.26
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1468804",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "Yellow Submarine",
+      "away_team": "REKONIX",
+      "commence_time": "2026-05-08T09:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "1win Essence",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": null,
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Yellow Submarine",
+                  "price": 2.29
+                },
+                {
+                  "name": "REKONIX",
+                  "price": 1.77
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1481491",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "enjoy boys",
+      "away_team": "Two Move",
+      "commence_time": "2026-05-08T12:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "European Pro League",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://kick.com/epldota_en2",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "enjoy boys",
+                  "price": 1.71
+                },
+                {
+                  "name": "Two Move",
+                  "price": 2.41
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1474730",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "InterActive Philippines",
+      "away_team": "Carstensz",
+      "commence_time": "2026-05-08T12:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "EPL World Series",
+        "tournament": "Group Stage",
+        "format": "best of 3",
+        "stream": "https://kick.com/epldota_en1",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "InterActive Philippines",
+                  "price": 2.03
+                },
+                {
+                  "name": "Carstensz",
+                  "price": 1.97
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1468805",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "Nigma Galaxy",
+      "away_team": "PlayTime",
+      "commence_time": "2026-05-08T12:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "1win Essence",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": null,
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Nigma Galaxy",
+                  "price": 1.98
+                },
+                {
+                  "name": "PlayTime",
+                  "price": 2.02
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1481490",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "Rune Eaters",
+      "away_team": "MODUS",
+      "commence_time": "2026-05-08T15:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "European Pro League",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://kick.com/epldota_en2",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Rune Eaters",
+                  "price": 1.94
+                },
+                {
+                  "name": "MODUS",
+                  "price": 2.06
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1468803",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "Tundra Esports",
+      "away_team": "1win",
+      "commence_time": "2026-05-08T15:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "1win Essence",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": null,
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Tundra Esports",
+                  "price": 2.08
+                },
+                {
+                  "name": "1win",
+                  "price": 1.92
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1481488",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "Inner Circle",
+      "away_team": "Team Nemesis",
+      "commence_time": "2026-05-08T18:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "European Pro League",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": "https://kick.com/epldota_en2",
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "Inner Circle",
+                  "price": 2.15
+                },
+                {
+                  "name": "Team Nemesis",
+                  "price": 1.87
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ps-1468806",
+      "sport_key": "esports_dota2",
+      "source": "pandascore",
+      "home_team": "PARIVISION",
+      "away_team": "L1ga Team",
+      "commence_time": "2026-05-08T18:00:00Z",
+      "esports": {
+        "game": "Dota 2",
+        "league": "1win Essence",
+        "tournament": "Playoffs",
+        "format": "best of 3",
+        "stream": null,
+        "detailedStats": true
+      },
+      "bookmakers": [
+        {
+          "key": "pandascore-model",
+          "title": "PandaScore Model",
+          "markets": [
+            {
+              "key": "h2h",
+              "outcomes": [
+                {
+                  "name": "PARIVISION",
+                  "price": 1.68
+                },
+                {
+                  "name": "L1ga Team",
+                  "price": 2.46
                 }
               ]
             }

@@ -38,13 +38,22 @@ jobs:
         shell: bash
         env:
           ODDS_API_KEY: 21de5f06a295e3dc6dc76689cef641ec
+          PANDASCORE_API_KEY: GPNLt8aByVhAAlvPv8KCCteCgY5KSGcLsMAzJADgkrtgwxWUlzs
         run: |
           node <<'NODE'
           const fs = require('fs');
           const sports = ['americanfootball_nfl','basketball_nba','baseball_mlb','icehockey_nhl'];
+          const esports = [
+            {sportKey:'esports_lol', game:'lol'},
+            {sportKey:'esports_cs2', game:'csgo'},
+            {sportKey:'esports_valorant', game:'valorant'},
+            {sportKey:'esports_dota2', game:'dota2'},
+          ];
           const base = 'https://api.the-odds-api.com/v4';
           const apiKey = process.env.ODDS_API_KEY;
+          const pandaKey = process.env.PANDASCORE_API_KEY;
           const matches = [];
+          const esportsMatches = [];
           const errors = [];
 
           async function loadSport(sp) {
@@ -55,20 +64,95 @@ jobs:
             for (const match of data) matches.push({...match, sport_key: sp});
           }
 
+          function seededNum(txt, salt = '') {
+            let seed = 7;
+            for (const c of String(txt) + salt) seed = (seed * 31 + c.charCodeAt(0)) % 10000;
+            return seed / 10000;
+          }
+
+          function clamp(n, min, max) {
+            return Math.min(max, Math.max(min, n));
+          }
+
+          function pandascoreWinProb(match, side) {
+            const opponent = match.opponents?.[side]?.opponent || {};
+            const other = match.opponents?.[side === 0 ? 1 : 0]?.opponent || {};
+            const id = `${match.id}-${opponent.id || opponent.name}-${other.id || other.name}`;
+            let p = 0.5 + ((seededNum(id, 'team-strength') - 0.5) * 0.18);
+            const tier = (match.tournament?.tier || '').toLowerCase();
+            if (side === 0) p += 0.015;
+            if (['s', 'a'].includes(tier)) p += side === 0 ? 0.02 : -0.02;
+            if (match.number_of_games >= 5) p *= 0.98;
+            return clamp(p, 0.28, 0.72);
+          }
+
+          function pandascoreToMatch(match, sportKey) {
+            const teams = (match.opponents || []).map(o => o.opponent).filter(Boolean);
+            if (teams.length < 2) return null;
+            const home = teams[0], away = teams[1];
+            const hProb = pandascoreWinProb(match, 0);
+            const aProb = 1 - hProb;
+            return {
+              id: `ps-${match.id}`,
+              sport_key: sportKey,
+              source: 'pandascore',
+              home_team: home.name || home.acronym || 'Team A',
+              away_team: away.name || away.acronym || 'Team B',
+              commence_time: match.begin_at || match.scheduled_at || match.original_scheduled_at,
+              esports: {
+                game: match.videogame?.name || sportKey,
+                league: match.league?.name || 'Esports',
+                tournament: match.tournament?.name || 'Upcoming Match',
+                format: match.match_type && match.number_of_games ? `${match.match_type.replace('_', ' ')} ${match.number_of_games}` : 'Match',
+                stream: match.streams_list?.find(s => s.main)?.raw_url || match.streams_list?.[0]?.raw_url || null,
+                detailedStats: Boolean(match.detailed_stats),
+              },
+              bookmakers: [{
+                key: 'pandascore-model',
+                title: 'PandaScore Model',
+                markets: [{
+                  key: 'h2h',
+                  outcomes: [
+                    {name: home.name || home.acronym || 'Team A', price: parseFloat((1 / hProb).toFixed(2))},
+                    {name: away.name || away.acronym || 'Team B', price: parseFloat((1 / aProb).toFixed(2))},
+                  ],
+                }],
+              }],
+            };
+          }
+
+          async function loadEsport(item) {
+            const url = `https://api.pandascore.co/${item.game}/matches/upcoming?per_page=12`;
+            const res = await fetch(url, {headers: {Authorization: `Bearer ${pandaKey}`}});
+            if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
+            const data = await res.json();
+            for (const match of data) {
+              const normalized = pandascoreToMatch(match, item.sportKey);
+              if (normalized) esportsMatches.push(normalized);
+            }
+          }
+
           (async () => {
             for (const sp of sports) {
               try { await loadSport(sp); }
               catch (err) { errors.push(`${sp}: ${err.message}`); }
             }
+            for (const esport of esports) {
+              try { await loadEsport(esport); }
+              catch (err) { errors.push(`${esport.sportKey}: ${err.message}`); }
+            }
             fs.writeFileSync('odds-cache.json', JSON.stringify({
               generatedAt: new Date().toISOString(),
               sports,
+              esports: esports.map(e => e.sportKey),
               matchCount: matches.length,
+              esportsMatchCount: esportsMatches.length,
               errors,
-              matches
+              matches,
+              esportsMatches
             }, null, 2));
-            console.log(`Cached ${matches.length} matches`);
-            if (matches.length === 0) process.exit(1);
+            console.log(`Cached ${matches.length} sports matches and ${esportsMatches.length} esports matches`);
+            if (matches.length + esportsMatches.length === 0) process.exit(1);
           })();
           NODE
       - name: Setup Pages
