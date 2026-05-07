@@ -746,7 +746,7 @@ function parlayCard(p){
     </div>
     <div class="leg-list">${p.legs.map(leg=>`
       <div class="leg-item">
-        <div class="leg-match">${leg.match.home_team} vs ${leg.match.away_team}</div>
+        <div class="leg-match"><span class="sp-pill ${leg.match.analysis.sp.cls}" style="margin-right:6px">${leg.match.analysis.sp.short}</span>${leg.match.home_team} vs ${leg.match.away_team}</div>
         <div class="leg-match"><i class="fa fa-clock" style="opacity:.55;margin-right:4px"></i>${fmtTime(leg.match.commence_time)}</div>
         <div class="leg-pick"><span>${leg.team}</span><span>${(leg.prob*100).toFixed(1)}%</span></div>
         <div class="leg-reason">Included because ${leg.reason}. Odds: ${fmtOdds(leg.oddsD,fmt)} @ ${leg.book}</div>
