@@ -7,6 +7,7 @@ let S = {
   page:'dashboard', loading:false, apiError:null, apiNotice:null,
   matches:[], sportFilter:'all', riskFilter:'all',
   bookFilter:'all', dateFilter:'all',
+  parlayMode:'all', parlaySport:'all',
   selectedMatch:null, modal:null, addWatchMatch:null,
   watchlist: lsGet('oddsiq_wl',[]),
   settings: {...DEFAULT_SETTINGS,...lsGet('oddsiq_set',{})},
@@ -293,15 +294,44 @@ function buildParlay(type,label,legs,riskLabel){
   const combinedOdds=legs.reduce((p,leg)=>p*leg.oddsD,1);
   return{type,label,legs,riskLabel,probability,payout,combinedOdds};
 }
-function generateParlaySuggestions(matches){
+function legSportCount(legs){return new Set(legs.map(leg=>leg.match.sport_key)).size;}
+function parlayMatchesMode(legs,mode){
+  if(mode==='mixed')return legSportCount(legs)>1;
+  if(mode==='same')return legSportCount(legs)===1;
+  return true;
+}
+function selectParlayLegs(picks,count,rule,mode){
+  const used=new Set(),legs=[];
+  const ordered=mode==='mixed'
+    ?[
+      ...Object.values(picks.reduce((bySport,p)=>{
+        if(rule(p)&&!bySport[p.match.sport_key])bySport[p.match.sport_key]=p;
+        return bySport;
+      },{})),
+      ...picks,
+    ]
+    :picks;
+  for(const p of ordered){
+    if(used.has(p.match.id)||!rule(p))continue;
+    if(mode==='same'&&legs.length&&p.match.sport_key!==legs[0].match.sport_key)continue;
+    used.add(p.match.id);legs.push(p);
+    if(legs.length===count)break;
+  }
+  return parlayMatchesMode(legs,mode)?legs:[];
+}
+function generateParlaySuggestions(matches,opts={}){
+  const mode=opts.mode||'all';
   const picks=rankPicks(matches);
   const safe=uniqueLegs(picks,3,p=>p.prob>=.56&&p.risk.key!=='hr');
   const balanced=uniqueLegs(picks,4,p=>p.prob>=.47&&p.risk.key!=='hr');
   const high=uniqueLegs([...picks].sort((a,b)=>b.oddsD-a.oddsD),4,p=>p.prob>=.34);
+  const safeLegs=mode==='all'?safe:selectParlayLegs(picks,3,p=>p.prob>=.56&&p.risk.key!=='hr',mode);
+  const balancedLegs=mode==='all'?balanced:selectParlayLegs(picks,4,p=>p.prob>=.47&&p.risk.key!=='hr',mode);
+  const highLegs=mode==='all'?high:selectParlayLegs([...picks].sort((a,b)=>b.oddsD-a.oddsD),4,p=>p.prob>=.34,mode);
   return[
-    buildParlay('safe','Safer Parlay',safe.length>=2?safe.slice(0,3):safe,'2-3 legs, higher probability'),
-    buildParlay('balanced','Balanced Parlay',balanced.length>=3?balanced.slice(0,4):balanced,'3-5 legs, medium risk'),
-    buildParlay('high','High Risk / High Reward',high.length>=4?high:high,'4+ legs, bigger payout'),
+    buildParlay('safe','Safer Parlay',safeLegs.length>=2?safeLegs.slice(0,3):safeLegs,'2-3 legs, higher probability'),
+    buildParlay('balanced','Balanced Parlay',balancedLegs.length>=3?balancedLegs.slice(0,4):balancedLegs,'3-5 legs, medium risk'),
+    buildParlay('high','High Risk / High Reward',highLegs.length>=4?highLegs:highLegs,'4+ legs, bigger payout'),
   ].filter(p=>p&&p.legs.length>=2);
 }
 
@@ -544,8 +574,8 @@ function parlayCard(p){
     </div>
   </div>`;
 }
-function autoParlayBuilder(ms){
-  const parlays=generateParlaySuggestions(ms);
+function autoParlayBuilder(ms,opts={}){
+  const parlays=generateParlaySuggestions(ms,opts);
   if(!parlays.length)return'';
   return`<div class="dash-sec fu">
     <div class="sec-head">
@@ -554,6 +584,68 @@ function autoParlayBuilder(ms){
     </div>
     <div class="parlay-grid">${parlays.map(parlayCard).join('')}</div>
   </div>`;
+}
+
+function parlayFilteredMatches(){
+  let ms=S.matches;
+  if(S.parlaySport!=='all')ms=ms.filter(m=>m.sport_key===S.parlaySport);
+  if(S.dateFilter==='today'){const t=new Date().toDateString();ms=ms.filter(m=>new Date(m.commence_time).toDateString()===t);}
+  else if(S.dateFilter==='tomorrow'){const t=new Date();t.setDate(t.getDate()+1);ms=ms.filter(m=>new Date(m.commence_time).toDateString()===t.toDateString());}
+  return ms;
+}
+
+function pgParlays(){
+  const ms=parlayFilteredMatches();
+  const mode=S.parlaySport!=='all'?'same':S.parlayMode;
+  const parlays=generateParlaySuggestions(ms,{mode});
+  const sportCount=new Set(ms.map(m=>m.sport_key)).size;
+  return`<div class="topbar">
+  <div class="tb-title">Auto Parlay Builder</div>
+  <div class="tb-meta">Build safer, balanced, or high-risk parlays from loaded matches</div>
+  <div class="tb-acts">
+    <button class="btn" onclick="loadOdds()" ${S.loading?'disabled':''}>
+      <i class="fa fa-rotate${S.loading?' spinning':''}"></i>${S.loading?'Loading...':'Refresh Odds'}
+    </button>
+  </div>
+</div>
+<div class="page">
+  ${S.apiError?`<div class="api-err"><i class="fa fa-circle-exclamation fa-lg"></i><div><strong>API Error:</strong> ${S.apiError}<br><small>Refresh odds or use cached data before building parlays.</small></div></div>`:''}
+  ${S.apiNotice?`<div class="api-note"><i class="fa fa-database"></i><div><strong>Fallback data loaded.</strong> ${S.apiNotice}</div></div>`:''}
+  <div class="filter-row">
+    <label>Parlay Type</label>
+    <select onchange="S.parlayMode=this.value;render()" ${S.parlaySport!=='all'?'disabled':''}>
+      <option value="all" ${S.parlayMode==='all'?'selected':''}>Best Overall</option>
+      <option value="mixed" ${S.parlayMode==='mixed'?'selected':''}>Mixed Sports Only</option>
+      <option value="same" ${S.parlayMode==='same'?'selected':''}>Same Sport Only</option>
+    </select>
+    <div class="filter-div"></div>
+    <label>Sport</label>
+    <select onchange="S.parlaySport=this.value;render()">
+      <option value="all" ${S.parlaySport==='all'?'selected':''}>All Sports</option>
+      ${SPORTS.map(s=>`<option value="${s.key}" ${S.parlaySport===s.key?'selected':''}>${s.label}</option>`).join('')}
+    </select>
+    <div class="filter-div"></div>
+    <label>Date</label>
+    <select onchange="S.dateFilter=this.value;render()">
+      <option value="all">All Dates</option>
+      <option value="today" ${S.dateFilter==='today'?'selected':''}>Today</option>
+      <option value="tomorrow" ${S.dateFilter==='tomorrow'?'selected':''}>Tomorrow</option>
+    </select>
+  </div>
+  ${!S.loading&&S.matches.length?`<div class="stats-grid fu" style="grid-template-columns:repeat(3,1fr)">
+    <div class="stat-card gold"><div class="stat-lbl">Parlay Pool</div><div class="stat-val">${ms.length}</div><div class="stat-sub">eligible matches</div></div>
+    <div class="stat-card blue"><div class="stat-lbl">Sports Included</div><div class="stat-val">${sportCount}</div><div class="stat-sub">${S.parlaySport==='all'?'available in filter':'selected sport'}</div></div>
+    <div class="stat-card green"><div class="stat-lbl">Suggestions</div><div class="stat-val">${parlays.length}</div><div class="stat-sub">${S.parlaySport!=='all'?'same sport':S.parlayMode==='mixed'?'mixed sports':S.parlayMode==='same'?'same sport':'best overall'}</div></div>
+  </div>`:''}
+  ${S.loading?`<div class="loading-s"><div class="spinner"></div><div class="load-txt">Building parlay candidates...</div></div>`
+  :S.matches.length===0?`<div class="empty-s"><i class="fa fa-layer-group"></i><p>No matches loaded</p><small>Refresh odds from this page or the Dashboard first</small></div>`
+  :!parlays.length?`<div class="empty-s"><i class="fa fa-filter"></i><p>No parlay suggestions match these filters</p><small>Try Best Overall, All Sports, or a wider date range</small></div>`
+  :autoParlayBuilder(ms,{mode})}
+  <div style="margin-top:20px;padding:14px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);font-size:12px;color:var(--text3);line-height:1.7">
+    <i class="fa fa-shield-halved" style="color:#f5c842;margin-right:6px"></i>
+    <strong style="color:var(--text2)">No outcomes are guaranteed.</strong> Parlays multiply risk. Mixed-sport parlays combine candidates across loaded sports; same-sport parlays keep every leg within one sport.
+  </div>
+</div>`;
 }
 
 function pgDashboard(){
@@ -611,7 +703,7 @@ function pgDashboard(){
   </div>`:''}
   ${S.loading?`<div class="loading-s"><div class="spinner"></div><div class="load-txt">Fetching live odds from The Odds APIâ€¦</div></div>`
   :ms.length===0?`<div class="empty-s"><i class="fa fa-circle-xmark"></i><p>${S.matches.length===0?'Click "Refresh Odds" to load live data':'No matches match filters'}</p><small>${S.matches.length===0?'Needs internet + valid API key':'Try adjusting filters'}</small></div>`
-  :`${matchPredictionTable(ms)}${autoParlayBuilder(ms)}<div class="matches-grid">${ms.map((m,i)=>matchCard(m,i)).join('')}</div>`}
+  :`${matchPredictionTable(ms)}<div class="matches-grid">${ms.map((m,i)=>matchCard(m,i)).join('')}</div>`}
   <div style="margin-top:20px;padding:14px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);font-size:12px;color:var(--text3);line-height:1.7">
     <i class="fa fa-shield-halved" style="color:#f5c842;margin-right:6px"></i>
     <strong style="color:var(--text2)">No outcomes are guaranteed.</strong> Match predictions are model estimates built from public market odds and available signals. Verify odds at the sportsbook before any wager. Personal research tool only. *Confidence scores are estimates with no predictive guarantee.
@@ -994,6 +1086,7 @@ function render(){
   const pct=Math.min(100,Math.round((S.settings.dailyUsed/(S.settings.dailyLimit||10))*100));
   const navItems=[
     {page:'dashboard',icon:'fa-gauge-high',label:'Dashboard',badge:null},
+    {page:'parlays',icon:'fa-layer-group',label:'Parlays',badge:null},
     {page:'rankings',icon:'fa-ranking-star',label:'Rankings',badge:S.matches.length||null},
     {page:'watchlist',icon:'fa-bookmark',label:'Watchlist',badge:pend||null},
     {page:'history',icon:'fa-chart-line',label:'History',badge:null},
@@ -1021,6 +1114,7 @@ function render(){
   </div>`;
   let pg='';
   if(S.page==='dashboard')pg=pgDashboard();
+  else if(S.page==='parlays')pg=pgParlays();
   else if(S.page==='rankings')pg=pgRankings();
   else if(S.page==='watchlist')pg=pgWatchlist();
   else if(S.page==='history')pg=pgHistory();

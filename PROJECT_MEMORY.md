@@ -86,8 +86,8 @@ Esports:
 ## Key UI Features
 
 - Live Odds Dashboard
+- Dedicated Parlays page
 - Match Prediction Table
-- Auto Parlay Suggestions
 - Match cards
 - Detail modal with prediction explanation
 - Watchlist
@@ -106,6 +106,13 @@ Parlay cards now show:
 - Estimated payout
 - Risk level
 - Reason each leg was included
+
+Parlay page filters:
+- Best Overall
+- Mixed Sports Only
+- Same Sport Only
+- Selected sport only via sport dropdown
+- Date filter shared with dashboard date filtering
 
 ## Long-Term Direction
 
