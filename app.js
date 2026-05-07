@@ -7,7 +7,7 @@ let S = {
   page:'dashboard', loading:false, apiError:null, apiNotice:null,
   matches:[], sportFilter:'all', riskFilter:'all',
   bookFilter:'all', dateFilter:'all',
-  parlayMode:'all', parlaySport:'all',
+  parlayMode:'all', parlaySport:'all', parlaySports:null,
   selectedMatch:null, modal:null, addWatchMatch:null,
   watchlist: lsGet('oddsiq_wl',[]),
   settings: {...DEFAULT_SETTINGS,...lsGet('oddsiq_set',{})},
@@ -588,15 +588,46 @@ function autoParlayBuilder(ms,opts={}){
 
 function parlayFilteredMatches(){
   let ms=S.matches;
-  if(S.parlaySport!=='all')ms=ms.filter(m=>m.sport_key===S.parlaySport);
+  if(S.parlayMode==='mixed'){
+    const selected=Array.isArray(S.parlaySports)?S.parlaySports:SPORTS.map(s=>s.key);
+    ms=ms.filter(m=>selected.includes(m.sport_key));
+  }else if(S.parlaySport!=='all')ms=ms.filter(m=>m.sport_key===S.parlaySport);
   if(S.dateFilter==='today'){const t=new Date().toDateString();ms=ms.filter(m=>new Date(m.commence_time).toDateString()===t);}
   else if(S.dateFilter==='tomorrow'){const t=new Date();t.setDate(t.getDate()+1);ms=ms.filter(m=>new Date(m.commence_time).toDateString()===t.toDateString());}
   return ms;
 }
 
+function toggleParlaySport(sp){
+  if(!Array.isArray(S.parlaySports))S.parlaySports=SPORTS.map(s=>s.key);
+  if(S.parlaySports.includes(sp))S.parlaySports=S.parlaySports.filter(x=>x!==sp);
+  else S.parlaySports.push(sp);
+  if(S.parlaySports.length<2)toast('Mixed parlays need at least 2 sports','warn');
+  render();
+}
+
+function parlaySportPicker(){
+  if(S.parlayMode!=='mixed')return'';
+  const selected=Array.isArray(S.parlaySports)?S.parlaySports:SPORTS.map(s=>s.key);
+  return`<div class="parlay-sport-picker fu">
+    <div class="psp-top">
+      <div><div class="psp-title">Sports to Combine</div><div class="psp-sub">Choose two or more sports for mixed-sport parlay suggestions.</div></div>
+      <div class="psp-actions">
+        <button class="btn btn-sm" onclick="S.parlaySports=SPORTS.map(s=>s.key);render()">All</button>
+        <button class="btn btn-sm" onclick="S.parlaySports=[];render()">Clear</button>
+      </div>
+    </div>
+    <div class="psp-grid">${SPORTS.map(s=>{
+      const on=selected.includes(s.key);
+      return`<button class="sport-toggle${on?' on':''}" onclick="toggleParlaySport('${s.key}')">
+        <span class="sp-pill ${s.cls}">${s.short}</span><span>${s.label}</span>
+      </button>`;
+    }).join('')}</div>
+  </div>`;
+}
+
 function pgParlays(){
   const ms=parlayFilteredMatches();
-  const mode=S.parlaySport!=='all'?'same':S.parlayMode;
+  const mode=S.parlayMode==='mixed'?'mixed':S.parlaySport!=='all'?'same':S.parlayMode;
   const parlays=generateParlaySuggestions(ms,{mode});
   const sportCount=new Set(ms.map(m=>m.sport_key)).size;
   return`<div class="topbar">
@@ -613,14 +644,14 @@ function pgParlays(){
   ${S.apiNotice?`<div class="api-note"><i class="fa fa-database"></i><div><strong>Fallback data loaded.</strong> ${S.apiNotice}</div></div>`:''}
   <div class="filter-row">
     <label>Parlay Type</label>
-    <select onchange="S.parlayMode=this.value;render()" ${S.parlaySport!=='all'?'disabled':''}>
+    <select onchange="S.parlayMode=this.value;if(this.value==='mixed')S.parlaySport='all';render()">
       <option value="all" ${S.parlayMode==='all'?'selected':''}>Best Overall</option>
       <option value="mixed" ${S.parlayMode==='mixed'?'selected':''}>Mixed Sports Only</option>
       <option value="same" ${S.parlayMode==='same'?'selected':''}>Same Sport Only</option>
     </select>
     <div class="filter-div"></div>
     <label>Sport</label>
-    <select onchange="S.parlaySport=this.value;render()">
+    <select onchange="S.parlaySport=this.value;if(this.value!=='all')S.parlayMode='same';render()" ${S.parlayMode==='mixed'?'disabled':''}>
       <option value="all" ${S.parlaySport==='all'?'selected':''}>All Sports</option>
       ${SPORTS.map(s=>`<option value="${s.key}" ${S.parlaySport===s.key?'selected':''}>${s.label}</option>`).join('')}
     </select>
@@ -632,6 +663,7 @@ function pgParlays(){
       <option value="tomorrow" ${S.dateFilter==='tomorrow'?'selected':''}>Tomorrow</option>
     </select>
   </div>
+  ${parlaySportPicker()}
   ${!S.loading&&S.matches.length?`<div class="stats-grid fu" style="grid-template-columns:repeat(3,1fr)">
     <div class="stat-card gold"><div class="stat-lbl">Parlay Pool</div><div class="stat-val">${ms.length}</div><div class="stat-sub">eligible matches</div></div>
     <div class="stat-card blue"><div class="stat-lbl">Sports Included</div><div class="stat-val">${sportCount}</div><div class="stat-sub">${S.parlaySport==='all'?'available in filter':'selected sport'}</div></div>

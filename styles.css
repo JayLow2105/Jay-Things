@@ -246,6 +246,15 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);font-size:
 .leg-match{font-size:11px;color:var(--text3);font-family:var(--font-m);margin-bottom:4px;}
 .leg-pick{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;margin-bottom:4px;}
 .leg-reason{font-size:11px;color:var(--text3);line-height:1.45;}
+.parlay-sport-picker{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:14px 16px;margin-bottom:18px;}
+.psp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;}
+.psp-title{font-family:var(--font-d);font-size:14px;font-weight:700;}
+.psp-sub{font-size:11px;color:var(--text3);font-family:var(--font-m);margin-top:2px;}
+.psp-actions{display:flex;gap:6px;flex-shrink:0;}
+.psp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.sport-toggle{display:flex;align-items:center;gap:8px;padding:9px 10px;border-radius:var(--r);border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-family:var(--font-b);font-size:12px;cursor:pointer;text-align:left;transition:all .15s;min-height:42px;}
+.sport-toggle:hover{border-color:var(--border2);color:var(--text);}
+.sport-toggle.on{background:var(--accent-dim2);border-color:rgba(0,229,160,.24);color:var(--text);}
 
 /* SETTINGS */
 .set-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
@@ -274,5 +283,5 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);font-size:
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 .fu{animation:fadeUp .3s ease both;}
-@media(max-width:1100px){.matches-grid,.set-grid{grid-template-columns:1fr}.parlay-grid{grid-template-columns:1fr}.pred-table-wrap{overflow-x:auto}.pred-tbl{min-width:900px}}
+@media(max-width:1100px){.matches-grid,.set-grid{grid-template-columns:1fr}.parlay-grid{grid-template-columns:1fr}.psp-grid{grid-template-columns:1fr 1fr}.pred-table-wrap{overflow-x:auto}.pred-tbl{min-width:900px}}
 

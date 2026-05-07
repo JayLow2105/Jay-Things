@@ -111,6 +111,7 @@ Parlay page filters:
 - Best Overall
 - Mixed Sports Only
 - Same Sport Only
+- Mixed Sports Only includes a multi-select sport checklist so the user can choose exactly which sports to combine.
 - Selected sport only via sport dropdown
 - Date filter shared with dashboard date filtering
 
