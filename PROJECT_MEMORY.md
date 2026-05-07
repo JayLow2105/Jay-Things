@@ -96,6 +96,7 @@ Esports:
 - History
 - Settings
 - Settings includes a Dark/White theme selector. `render()` applies `body.theme-light` for white mode.
+- A quick Dark/White theme button is also shown in the top responsibility banner so users can switch themes without opening Settings.
 
 Parlay cards now show:
 - Sport badge

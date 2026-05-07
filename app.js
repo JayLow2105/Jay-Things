@@ -434,6 +434,11 @@ function toast(msg,type='success',dur=3000){
   S.toastTimer=setTimeout(()=>{S.toast=null;render();},dur);
 }
 function nav(page){S.page=page;render();}
+function toggleTheme(){
+  S.settings.theme=S.settings.theme==='light'?'dark':'light';
+  lsSave('oddsiq_set',S.settings);
+  render();
+}
 
 function filtered(){
   let ms=S.matches;
@@ -1156,8 +1161,11 @@ function render(){
       ${pct>100?'<div class="warn-pill"><i class="fa fa-triangle-exclamation"></i>Daily limit reached</div>':''}
     </div>
   </div>`;
+  const themeIcon=S.settings.theme==='light'?'fa-moon':'fa-sun';
+  const themeLabel=S.settings.theme==='light'?'Dark mode':'White mode';
   const banner=`<div class="resp-banner"><i class="fa fa-shield-halved"></i>
     <span><strong>Personal research only.</strong> No outcomes guaranteed. Odds change constantly. 18+ only. Problem gambling help: <strong>1-800-522-4700</strong></span>
+    <button class="theme-quick" onclick="toggleTheme()" title="${themeLabel}" aria-label="${themeLabel}"><i class="fa ${themeIcon}"></i><span>${themeLabel}</span></button>
   </div>`;
   let pg='';
   if(S.page==='dashboard')pg=pgDashboard();
