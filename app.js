@@ -1,8 +1,8 @@
-// â”€â”€ CONFIG â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// CONFIG
 const {CONFIG, SPORTS, DEFAULT_SETTINGS, OddsService, BallDontLieService, PandaScoreService} = window.OddsIQServices;
 const API_KEY = CONFIG.oddsApiKey;
 
-// â”€â”€ STATE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// STATE
 let S = {
   page:'dashboard', loading:false, apiError:null, apiNotice:null,
   matches:[], sportFilter:'all', riskFilter:'all',
@@ -27,7 +27,7 @@ lsSave('oddsiq_set',S.settings);
 function lsGet(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch{return d;}}
 function lsSave(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}}
 
-// â”€â”€ PROBABILITY ENGINE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// PROBABILITY ENGINE
 function a2d(o){return o>0?(o/100)+1:(100/Math.abs(o))+1;}
 function d2am(d){return d>=2?'+'+(Math.round((d-1)*100)):String(Math.round(-100/(d-1)));}
 function d2impl(d){return 1/d;}
@@ -128,9 +128,9 @@ function analyzeMatch(m){
   let reason='';
   if(bestEdge>0.08)reason=`${bestEdgeTeam==='home'?m.home_team:m.away_team} appears undervalued by market`;
   else if(bestEdge>0.03)reason='Slight value edge; market odds slightly off fair probability';
-  else if(overround>0.12)reason=`High vig (${(overround*100).toFixed(1)}%) â€” shop for better lines`;
+  else if(overround>0.12)reason=`High vig (${(overround*100).toFixed(1)}%) - shop for better lines`;
   else reason='Market well-priced; implied and estimated probabilities align';
-  if(m.bookmakers.length===1)reason+=' Â· Limited: 1 book only';
+  if(m.bookmakers.length===1)reason+='  /  Limited: 1 book only';
   const sp=getSport(m.sport_key);
   return{
     hImpl:(hImpl*100).toFixed(1),aImpl:(aImpl*100).toFixed(1),
@@ -143,7 +143,7 @@ function analyzeMatch(m){
   };
 }
 
-// â”€â”€ API â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// API
 function analyzeMatchV2(m){
   if(!m.bookmakers||!m.bookmakers.length)return null;
   let hOdds=[],aOdds=[],bestH=0,bestA=0,bestHBook='',bestABook='';
@@ -413,12 +413,12 @@ async function loadOdds(){
   }
 }
 
-// â”€â”€ HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// HELPERS
 function fmtTime(iso){
   const d=new Date(iso),now=new Date(),diff=d-now;
   const days=Math.floor(diff/86400000);
-  if(days===0)return'Today Â· '+d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit',hour12:true});
-  if(days===1)return'Tomorrow Â· '+d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit',hour12:true});
+  if(days===0)return'Today  /  '+d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit',hour12:true});
+  if(days===1)return'Tomorrow  /  '+d.toLocaleTimeString([],{hour:'numeric',minute:'2-digit',hour12:true});
   return d.toLocaleDateString([],{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true});
 }
 function short(n){if(!n)return'';const p=n.split(' ');return p[p.length-1];}
@@ -440,7 +440,7 @@ function filtered(){
 }
 function allBooks(){const b=new Set();S.matches.forEach(m=>m.bookmakers&&m.bookmakers.forEach(bk=>b.add(bk.title)));return[...b].sort();}
 
-// â”€â”€ WATCHLIST â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// WATCHLIST
 function addWatch(match,sel){
   const a=match.analysis;
   const isH=sel==='home';
@@ -458,7 +458,7 @@ function addWatch(match,sel){
     stake:1.0,outcome:'pending',profit:null,
     addedAt:new Date().toISOString(),commenceTime:match.commence_time,
   });
-  lsSave('oddsiq_wl',S.watchlist);S.modal=null;toast('Added to watchlist âœ“');
+  lsSave('oddsiq_wl',S.watchlist);S.modal=null;toast('Added to watchlist OK');
 }
 function setOut(id,out){
   const it=S.watchlist.find(w=>w.id===id);if(!it)return;
@@ -470,7 +470,7 @@ function setOut(id,out){
 }
 function rmWatch(id){S.watchlist=S.watchlist.filter(w=>w.id!==id);lsSave('oddsiq_wl',S.watchlist);toast('Removed','warn');render();}
 
-// â”€â”€ COMPONENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// COMPONENTS
 function matchCard(m,i){
   const a=m.analysis,fmt=S.settings.oddsFormat;
   const isH=a.bestEdgeTeam==='home';
@@ -511,7 +511,7 @@ function matchCard(m,i){
 </div>`;
 }
 
-// â”€â”€ PAGES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// PAGES
 function teamName(m,key){return key==='home'?m.home_team:m.away_team;}
 function predictionLabels(a){
   return a.labels.map(l=>`<span class="pick-label ${l.cls}">${l.label}</span>`).join('');
@@ -689,7 +689,7 @@ function pgDashboard(){
   const pct=Math.min(100,Math.round((S.settings.dailyUsed/(S.settings.dailyLimit||10))*100));
   return`<div class="topbar">
   <div class="tb-title">Live Odds Dashboard</div>
-  ${S.lastUpdated?`<div class="tb-meta"><i class="fa fa-satellite-dish" style="margin-right:5px;color:#00e5a0"></i>Updated ${S.lastUpdated.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}${S.apiRemaining!==null?' Â· '+S.apiRemaining+' API calls left':''}</div>`:''}
+  ${S.lastUpdated?`<div class="tb-meta"><i class="fa fa-satellite-dish" style="margin-right:5px;color:#00e5a0"></i>Updated ${S.lastUpdated.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}${S.apiRemaining!==null?'  /  '+S.apiRemaining+' API calls left':''}</div>`:''}
   <div class="tb-acts">
     <button class="btn" onclick="loadOdds()" ${S.loading?'disabled':''}>
       <i class="fa fa-rotate${S.loading?' spinning':''}"></i>${S.loading?'Loading...':'Refresh Odds'}
@@ -733,7 +733,7 @@ function pgDashboard(){
     <div class="stat-card blue"><div class="stat-lbl">Avg Confidence</div><div class="stat-val">${ac}%</div><div class="stat-sub">estimate only*</div></div>
     <div class="stat-card red"><div class="stat-lbl">Watchlist</div><div class="stat-val">${pend}</div><div class="stat-sub">pending picks</div></div>
   </div>`:''}
-  ${S.loading?`<div class="loading-s"><div class="spinner"></div><div class="load-txt">Fetching live odds from The Odds APIâ€¦</div></div>`
+  ${S.loading?`<div class="loading-s"><div class="spinner"></div><div class="load-txt">Fetching live odds from The Odds API...</div></div>`
   :ms.length===0?`<div class="empty-s"><i class="fa fa-circle-xmark"></i><p>${S.matches.length===0?'Click "Refresh Odds" to load live data':'No matches match filters'}</p><small>${S.matches.length===0?'Needs internet + valid API key':'Try adjusting filters'}</small></div>`
   :`${matchPredictionTable(ms)}<div class="matches-grid">${ms.map((m,i)=>matchCard(m,i)).join('')}</div>`}
   <div style="margin-top:20px;padding:14px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);font-size:12px;color:var(--text3);line-height:1.7">
@@ -745,9 +745,9 @@ function pgDashboard(){
 
 function pgRankings(){
   const sorted=[...S.matches].sort((a,b)=>b.analysis.bestEdge-a.analysis.bestEdge);
-  return`<div class="topbar"><div class="tb-title">Value Rankings</div><div class="tb-meta">Sorted by estimated value edge â€” higher = more potential value</div></div>
+  return`<div class="topbar"><div class="tb-title">Value Rankings</div><div class="tb-meta">Sorted by estimated value edge - higher = more potential value</div></div>
 <div class="page">
-  ${S.loading?`<div class="loading-s"><div class="spinner"></div><div class="load-txt">Loadingâ€¦</div></div>`
+  ${S.loading?`<div class="loading-s"><div class="spinner"></div><div class="load-txt">Loading...</div></div>`
   :sorted.length===0?`<div class="empty-s"><i class="fa fa-chart-bar"></i><p>No matches loaded</p><small>Load odds from the Dashboard first</small></div>`
   :`<div class="rank-list">${sorted.map((m,i)=>{
     const a=m.analysis,edge=a.bestEdge*100;
@@ -778,12 +778,12 @@ function pgWatchlist(){
   const net=res.reduce((a,w)=>a+(w.profit||0),0);
   const wr=res.length?Math.round((wins.length/res.length)*100):null;
   const roi=res.length?((net/res.reduce((a,w)=>a+w.stake,0))*100).toFixed(1):null;
-  return`<div class="topbar"><div class="tb-title">Watchlist</div><div class="tb-meta">${wl.length} total Â· ${wl.filter(w=>w.outcome==='pending').length} pending</div></div>
+  return`<div class="topbar"><div class="tb-title">Watchlist</div><div class="tb-meta">${wl.length} total  /  ${wl.filter(w=>w.outcome==='pending').length} pending</div></div>
 <div class="page">
   <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px">
-    <div class="stat-card ${wr>=50?'green':wr!==null?'red':'blue'}"><div class="stat-lbl">Win Rate</div><div class="stat-val">${wr!==null?wr+'%':'â€”'}</div><div class="stat-sub">${wins.length}W Â· ${res.filter(w=>w.outcome==='lost').length}L</div></div>
+    <div class="stat-card ${wr>=50?'green':wr!==null?'red':'blue'}"><div class="stat-lbl">Win Rate</div><div class="stat-val">${wr!==null?wr+'%':'-'}</div><div class="stat-sub">${wins.length}W  /  ${res.filter(w=>w.outcome==='lost').length}L</div></div>
     <div class="stat-card ${net>=0?'green':'red'}"><div class="stat-lbl">Net Profit</div><div class="stat-val">${net>=0?'+':''}${net.toFixed(2)}u</div><div class="stat-sub">simulation only</div></div>
-    <div class="stat-card blue"><div class="stat-lbl">ROI</div><div class="stat-val">${roi!==null?(parseFloat(roi)>=0?'+':'')+roi+'%':'â€”'}</div><div class="stat-sub">return on investment</div></div>
+    <div class="stat-card blue"><div class="stat-lbl">ROI</div><div class="stat-val">${roi!==null?(parseFloat(roi)>=0?'+':'')+roi+'%':'-'}</div><div class="stat-sub">return on investment</div></div>
   </div>
   ${wl.length===0?`<div class="empty-s"><i class="fa fa-bookmark"></i><p>Watchlist is empty</p><small>Click Watch on any match in the Dashboard</small></div>`
   :`<div class="tbl-wrap"><table class="wl-tbl">
@@ -798,7 +798,7 @@ function pgWatchlist(){
         <td style="font-family:var(--font-m);color:${parseFloat(w.edge)>0?'#00e5a0':'var(--text3)'}">${parseFloat(w.edge)>0?'+':''}${parseFloat(w.edge).toFixed(1)}%</td>
         <td><span class="risk-badge ${w.riskKey==='low'?'r-low':w.riskKey==='medium'?'r-med':w.riskKey==='high'?'r-high':'r-hr'}">${w.riskLbl}</span></td>
         <td style="font-family:var(--font-m)">${w.stake.toFixed(1)}u</td>
-        <td style="font-family:var(--font-m);color:${w.profit===null?'var(--text3)':w.profit>=0?'#00e5a0':'#ff4d6a'};font-weight:600">${w.profit===null?'â€”':(w.profit>=0?'+':'')+w.profit.toFixed(2)+'u'}</td>
+        <td style="font-family:var(--font-m);color:${w.profit===null?'var(--text3)':w.profit>=0?'#00e5a0':'#ff4d6a'};font-weight:600">${w.profit===null?'-':(w.profit>=0?'+':'')+w.profit.toFixed(2)+'u'}</td>
         <td>${w.outcome==='pending'
           ?`<div class="out-btns">
               <button class="btn btn-sm btn-success" onclick="setOut(${w.id},'won')">Won</button>
@@ -828,9 +828,9 @@ function pgHistory(){
   return`<div class="topbar"><div class="tb-title">Historical Results</div><div class="tb-meta">${res.length} resolved picks</div></div>
 <div class="page">
   <div class="stats-grid">
-    <div class="stat-card ${wr>=50?'green':wr!==null?'red':'blue'}"><div class="stat-lbl">Win Rate</div><div class="stat-val">${wr!==null?wr+'%':'â€”'}</div><div class="stat-sub">${wins}W / ${res.filter(w=>w.outcome==='lost').length}L</div></div>
+    <div class="stat-card ${wr>=50?'green':wr!==null?'red':'blue'}"><div class="stat-lbl">Win Rate</div><div class="stat-val">${wr!==null?wr+'%':'-'}</div><div class="stat-sub">${wins}W / ${res.filter(w=>w.outcome==='lost').length}L</div></div>
     <div class="stat-card ${net>=0?'green':'red'}"><div class="stat-lbl">Net Profit</div><div class="stat-val">${net>=0?'+':''}${net.toFixed(2)}u</div><div class="stat-sub">unit simulation</div></div>
-    <div class="stat-card blue"><div class="stat-lbl">ROI</div><div class="stat-val">${roi!==null?(parseFloat(roi)>=0?'+':'')+roi+'%':'â€”'}</div><div class="stat-sub">return on investment</div></div>
+    <div class="stat-card blue"><div class="stat-lbl">ROI</div><div class="stat-val">${roi!==null?(parseFloat(roi)>=0?'+':'')+roi+'%':'-'}</div><div class="stat-sub">return on investment</div></div>
     <div class="stat-card gold"><div class="stat-lbl">Resolved</div><div class="stat-val">${res.length}</div><div class="stat-sub">picks tracked</div></div>
   </div>
   <div class="hist-sec">
@@ -839,7 +839,7 @@ function pgHistory(){
       const tot=g.w+g.l2,wr2=tot?Math.round((g.w/tot)*100):null;
       return`<div class="rp-card"><div style="margin-bottom:10px"><span class="risk-badge ${g.c}">${g.l}</span></div>
         <div class="rp-row"><span>Picks</span><span>${tot}</span></div>
-        <div class="rp-row"><span>Win Rate</span><span style="color:${wr2>=50?'#00e5a0':wr2!==null?'#ff4d6a':'var(--text)'}">${wr2!==null?wr2+'%':'â€”'}</span></div>
+        <div class="rp-row"><span>Win Rate</span><span style="color:${wr2>=50?'#00e5a0':wr2!==null?'#ff4d6a':'var(--text)'}">${wr2!==null?wr2+'%':'-'}</span></div>
         <div class="rp-row"><span>Wins</span><span style="color:#00e5a0">${g.w}</span></div>
         <div class="rp-row"><span>Losses</span><span style="color:#ff4d6a">${g.l2}</span></div>
         <div class="rp-row"><span>P/L</span><span style="color:${g.p>=0?'#00e5a0':'#ff4d6a'}">${g.p>=0?'+':''}${g.p.toFixed(2)}u</span></div>
@@ -882,7 +882,7 @@ function pgSettings(){
   <div class="set-card full">
     <div class="set-ttl"><i class="fa fa-key"></i>API Configuration</div>
     <div class="set-row">
-      <div><div class="set-lbl">Odds API Key</div><div class="set-desc">the-odds-api.com Â· Free tier: 500 req/month${S.apiRemaining!==null?' Â· '+S.apiRemaining+' remaining':''}</div></div>
+      <div><div class="set-lbl">Odds API Key</div><div class="set-desc">the-odds-api.com  /  Free tier: 500 req/month${S.apiRemaining!==null?'  /  '+S.apiRemaining+' remaining':''}</div></div>
       <div style="display:flex;gap:8px;align-items:center">
         <input type="password" id="apiIn" value="${ss.apiKey}" placeholder="Enter API key" style="min-width:240px">
         <button class="btn btn-accent btn-sm" onclick="S.settings.apiKey=document.getElementById('apiIn').value;lsSave('oddsiq_set',S.settings);toast('API key saved')">
@@ -915,7 +915,7 @@ function pgSettings(){
   <div class="set-card">
     <div class="set-ttl"><i class="fa fa-shield-halved"></i>Responsible Gambling</div>
     <div class="set-row">
-      <div><div class="set-lbl">Daily Unit Limit</div><div class="set-desc">${pd}% used Â· ${ss.dailyUsed}/${ss.dailyLimit} units</div>
+      <div><div class="set-lbl">Daily Unit Limit</div><div class="set-desc">${pd}% used  /  ${ss.dailyUsed}/${ss.dailyLimit} units</div>
         <div style="margin-top:6px;width:160px;height:3px;background:var(--border);border-radius:2px;overflow:hidden">
           <div style="width:${pd}%;height:100%;border-radius:2px;background:${pd>80?'#ff4d6a':'#00e5a0'}"></div>
         </div>
@@ -926,7 +926,7 @@ function pgSettings(){
       </div>
     </div>
     <div class="set-row">
-      <div><div class="set-lbl">Weekly Unit Limit</div><div class="set-desc">${pw}% used Â· ${ss.weeklyUsed}/${ss.weeklyLimit} units</div></div>
+      <div><div class="set-lbl">Weekly Unit Limit</div><div class="set-desc">${pw}% used  /  ${ss.weeklyUsed}/${ss.weeklyLimit} units</div></div>
       <input type="number" value="${ss.weeklyLimit}" min="1" style="width:90px" onchange="S.settings.weeklyLimit=parseFloat(this.value)||50;lsSave('oddsiq_set',S.settings);render()">
     </div>
     <div class="set-row">
@@ -963,7 +963,7 @@ function pgSettings(){
 </div></div>`;
 }
 
-// â”€â”€ MODALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// MODALS
 function openDetail(id){
   const m=S.matches.find(x=>x.id===id);if(!m)return;
   S.selectedMatch=m;S.modal='detail';render();
@@ -1003,20 +1003,20 @@ function renderModal(){
         <div class="modal-sub" style="margin-bottom:0"><i class="fa fa-clock" style="margin-right:5px;opacity:.5"></i>${fmtTime(m.commence_time)}</div>
       </div>
     </div>
-    <div style="font-size:11px;color:var(--text3);font-family:var(--font-m);margin-bottom:16px">${a.numBooks} sportsbook${a.numBooks!==1?'s':''} compared Â· Vig: ${a.overround}%</div>
+    <div style="font-size:11px;color:var(--text3);font-family:var(--font-m);margin-bottom:16px">${a.numBooks} sportsbook${a.numBooks!==1?'s':''} compared  /  Vig: ${a.overround}%</div>
     <div class="modal-grid">
       <div class="modal-cell">
         <div class="mc-lbl">${m.home_team}</div>
         <div class="mc-val">${hAm}</div>
         <div class="mc-sub">Best: ${a.bestHBook}</div>
-        <div class="mc-sub">Implied: ${a.hImpl}% Â· Est: <span style="color:#00e5a0">${a.hEst}%</span></div>
+        <div class="mc-sub">Implied: ${a.hImpl}%  /  Est: <span style="color:#00e5a0">${a.hEst}%</span></div>
         <div class="mc-sub" style="color:${parseFloat(a.hEdge)>0?'#00e5a0':'#ff4d6a'}">Edge: ${parseFloat(a.hEdge)>0?'+':''}${a.hEdge}%</div>
       </div>
       <div class="modal-cell">
         <div class="mc-lbl">${m.away_team}</div>
         <div class="mc-val">${aAm}</div>
         <div class="mc-sub">Best: ${a.bestABook}</div>
-        <div class="mc-sub">Implied: ${a.aImpl}% Â· Est: <span style="color:#00e5a0">${a.aEst}%</span></div>
+        <div class="mc-sub">Implied: ${a.aImpl}%  /  Est: <span style="color:#00e5a0">${a.aEst}%</span></div>
         <div class="mc-sub" style="color:${parseFloat(a.aEdge)>0?'#00e5a0':'#ff4d6a'}">Edge: ${parseFloat(a.aEdge)>0?'+':''}${a.aEdge}%</div>
       </div>
       <div class="modal-cell">
@@ -1025,12 +1025,12 @@ function renderModal(){
         <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin:6px 0">
           <div style="width:${a.conf}%;height:100%;background:${cc};border-radius:2px"></div>
         </div>
-        <div class="mc-sub">estimate only â€” not a guarantee</div>
+        <div class="mc-sub">estimate only - not a guarantee</div>
       </div>
       <div class="modal-cell">
         <div class="mc-lbl">Sportsbook Vig</div>
         <div class="mc-val">${a.overround}%</div>
-        <div class="mc-sub">${parseFloat(a.overround)<5?'Low vig â€” good value':parseFloat(a.overround)<10?'Average vig':'High vig â€” shop around'}</div>
+        <div class="mc-sub">${parseFloat(a.overround)<5?'Low vig - good value':parseFloat(a.overround)<10?'Average vig':'High vig - shop around'}</div>
       </div>
     </div>
     <div class="modal-grid">
@@ -1062,7 +1062,7 @@ function renderModal(){
     <div class="rec-box">
       <div class="rec-lbl"><i class="fa fa-crosshairs" style="margin-right:5px"></i>Model Recommendation (estimate only)</div>
       <div class="rec-team">${rec}</div>
-      <div class="rec-row">Best odds: ${recOdds} @ ${recBk} Â· Payout/unit: +${((recD-1)*1).toFixed(2)}u Â· Est. prob: ${isH?a.hEst:a.aEst}%</div>
+      <div class="rec-row">Best odds: ${recOdds} @ ${recBk}  /  Payout/unit: +${((recD-1)*1).toFixed(2)}u  /  Est. prob: ${isH?a.hEst:a.aEst}%</div>
       ${a.hasWarn?'<div style="margin-top:8px;font-size:11px;color:#ff8a3d"><i class="fa fa-triangle-exclamation"></i> Elevated risk. Use caution.</div>':''}
     </div>
     <div class="disc-box"><i class="fa fa-shield-halved" style="margin-right:6px;color:#f5c842"></i><strong>No outcomes guaranteed.</strong> Confidence and probability scores are model predictions from market signals, not guarantees. Verify odds at the sportsbook. Gamble responsibly.</div>
@@ -1112,7 +1112,7 @@ function renderModal(){
   return`<div class="modal-ov" onclick="if(event.target===this)closeModal()"><div class="modal">${c}</div></div>`;
 }
 
-// â”€â”€ RENDER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// RENDER
 function render(){
   const pend=S.watchlist.filter(w=>w.outcome==='pending').length;
   const pct=Math.min(100,Math.round((S.settings.dailyUsed/(S.settings.dailyLimit||10))*100));
@@ -1126,7 +1126,7 @@ function render(){
   ];
   const sidebar=`<div class="sb">
     <div class="sb-brand">
-      <div class="sb-mark"><div class="sb-icon">âš¡</div><div class="sb-name">OddsIQ</div></div>
+      <div class="sb-mark"><div class="sb-icon"><i class="fa fa-bolt"></i></div><div class="sb-name">OddsIQ</div></div>
       <div class="sb-sub">Sports Analysis Tool</div>
     </div>
     <nav class="sb-nav">
@@ -1157,4 +1157,3 @@ function render(){
 
 render();
 loadOdds();
-

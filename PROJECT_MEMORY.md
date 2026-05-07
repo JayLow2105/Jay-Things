@@ -140,6 +140,7 @@ Next high-value work:
 - Avoid rebuilding from scratch.
 - Keep `services.js` as the API boundary.
 - Keep `OddsIQ_App.html` thin. Put CSS in `styles.css` and app functions/UI rendering in `app.js`.
+- Prefer ASCII-safe UI separators/placeholders in `app.js` (`-`, `/`, `N/A`) to avoid mojibake on GitHub Pages.
 - Keep GitHub Pages deployment working after changes.
 - Run a JS syntax check before commits:
 
