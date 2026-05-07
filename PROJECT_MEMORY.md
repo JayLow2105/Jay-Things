@@ -2,6 +2,13 @@
 
 This file is for Codex/project continuity. Read it before making future changes.
 
+## Memory Maintenance Rule
+
+- For every new project request, read this file first.
+- After making any meaningful code, architecture, deployment, API, feature, or roadmap change, update this file in the same turn.
+- Keep updates concise. Record what changed, why it matters, and any follow-up constraints.
+- If the user only asks a question and no project state changes, no memory update is needed unless the answer establishes a new decision or direction.
+
 ## Short-Term State
 
 - Main app file: `OddsIQ_App.html`
@@ -133,4 +140,3 @@ for(const script of inlineScripts)new Function(script);
 console.log('JS syntax OK');
 '@ | node -
 ```
-
