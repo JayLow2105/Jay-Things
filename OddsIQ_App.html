@@ -288,28 +288,11 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);font-size:
 </head>
 <body>
 <div class="app" id="app"></div>
+<script src="services.js"></script>
 <script>
 // ── CONFIG ──────────────────────────────────────
-const API_KEY = '21de5f06a295e3dc6dc76689cef641ec';
-const BASE = 'https://api.the-odds-api.com/v4';
-const REGIONS = 'us';
-const MARKETS = 'h2h';
-
-const SPORTS = [
-  {key:'americanfootball_nfl',label:'NFL',short:'NFL',cls:'sp-nfl'},
-  {key:'basketball_nba',label:'NBA',short:'NBA',cls:'sp-nba'},
-  {key:'baseball_mlb',label:'MLB',short:'MLB',cls:'sp-mlb'},
-  {key:'icehockey_nhl',label:'NHL',short:'NHL',cls:'sp-nhl'},
-  {key:'soccer_epl',label:'EPL Soccer',short:'EPL',cls:'sp-def'},
-  {key:'americanfootball_ncaaf',label:'NCAAF',short:'NCAAF',cls:'sp-nfl'},
-  {key:'basketball_ncaab',label:'NCAAB',short:'NCAAB',cls:'sp-nba'},
-];
-
-const DEFAULT_SETTINGS = {
-  apiKey:API_KEY, oddsFormat:'american', hideHighRisk:false,
-  dailyLimit:10, dailyUsed:0, weeklyLimit:50, weeklyUsed:0,
-  activeSports:['americanfootball_nfl','basketball_nba','baseball_mlb','icehockey_nhl'],
-};
+const {CONFIG, SPORTS, DEFAULT_SETTINGS, OddsService, BallDontLieService} = window.OddsIQServices;
+const API_KEY = CONFIG.oddsApiKey;
 
 // ── STATE ───────────────────────────────────────
 let S = {
@@ -567,9 +550,7 @@ function addAnalyzedMatch(list,m,sp){
   if(a)list.push({...m,analysis:a});
 }
 async function loadOddsCache(){
-  const res=await fetch(`odds-cache.json?v=${Date.now()}`,{cache:'no-store'});
-  if(!res.ok)throw new Error(`cache ${res.status}`);
-  const payload=await res.json();
+  const payload=await OddsService.loadCache();
   const all=[];
   (payload.matches||[]).forEach(m=>addAnalyzedMatch(all,m,m.sport_key));
   return{matches:all,generatedAt:payload.generatedAt};
@@ -585,16 +566,9 @@ async function loadOdds(){
     if(!apiKey)throw new Error('Missing The Odds API key');
     for(const sp of sports){
       try{
-        const url=`${BASE}/sports/${sp}/odds/?apiKey=${encodeURIComponent(apiKey)}&regions=${REGIONS}&markets=${MARKETS}&oddsFormat=decimal&dateFormat=iso`;
-        const res=await fetch(url);
-        if(!res.ok){
-          let msg=`${res.status}`;
-          try{const body=await res.json();if(body.message)msg+=` - ${body.message}`;}catch{}
-          throw new Error(msg);
-        }
-        const rem=res.headers.get('x-requests-remaining');
-        if(rem)S.apiRemaining=parseInt(rem);
-        const data=await res.json();
+        const result=await OddsService.fetchSportOdds(sp,apiKey);
+        if(result.remaining)S.apiRemaining=parseInt(result.remaining);
+        const data=result.data;
         data.forEach(m=>addAnalyzedMatch(all,m,sp));
       }catch(e){errors.push(`${sp}: ${e.message}`);console.warn('Failed',sp,e.message);}
     }
