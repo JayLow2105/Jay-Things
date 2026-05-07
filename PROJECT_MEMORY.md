@@ -12,6 +12,8 @@ This file is for Codex/project continuity. Read it before making future changes.
 ## Short-Term State
 
 - Main app file: `OddsIQ_App.html`
+- App logic/UI rendering file: `app.js`
+- App styling file: `styles.css`
 - Service layer: `services.js`
 - GitHub Pages entrypoint: `index.html`
 - Cached public data: `odds-cache.json`
@@ -22,7 +24,9 @@ This file is for Codex/project continuity. Read it before making future changes.
 ## Current Architecture
 
 - `index.html` redirects to `OddsIQ_App.html`.
-- `OddsIQ_App.html` owns UI, prediction logic, cards, tables, watchlist, settings, filters, and modals.
+- `OddsIQ_App.html` is now a thin HTML shell. It loads fonts/icons, `styles.css`, `services.js`, and `app.js`.
+- `styles.css` owns all app styling.
+- `app.js` owns UI rendering, prediction logic, cards, tables, watchlist, settings, filters, and modals.
 - `services.js` owns API configuration and fetch helpers:
   - `OddsService`
   - `BallDontLieService`
@@ -127,6 +131,7 @@ Next high-value work:
 - Prefer small, beginner-friendly functions.
 - Avoid rebuilding from scratch.
 - Keep `services.js` as the API boundary.
+- Keep `OddsIQ_App.html` thin. Put CSS in `styles.css` and app functions/UI rendering in `app.js`.
 - Keep GitHub Pages deployment working after changes.
 - Run a JS syntax check before commits:
 
@@ -134,9 +139,7 @@ Next high-value work:
 @'
 const fs=require('fs');
 new Function(fs.readFileSync('services.js','utf8'));
-const html=fs.readFileSync('OddsIQ_App.html','utf8');
-const inlineScripts=[...html.matchAll(/<script(?![^>]*src=)[^>]*>([\s\S]*?)<\/script>/gi)].map(m=>m[1]);
-for(const script of inlineScripts)new Function(script);
+new Function(fs.readFileSync('app.js','utf8'));
 console.log('JS syntax OK');
 '@ | node -
 ```
